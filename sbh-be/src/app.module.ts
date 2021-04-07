@@ -2,15 +2,14 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { FormulaInfo } from './entities/formulainfo.entity'; 
 import { TestconnectionModule } from './modules/testconnection/testconnection.module';
+import { FormulainfoModule } from './modules/formulainfo/formulainfo.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-     entities: [FormulaInfo],
-    }), 
-    TestconnectionModule
+    TypeOrmModule.forRoot(), 
+    TestconnectionModule, 
+    FormulainfoModule
   ],
   controllers: [AppController],
   providers: [AppService],

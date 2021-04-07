@@ -11,5 +11,5 @@ export class FormulaInfo {
     videourl: string ;  
 
     @Column()
-    description : string[]; 
+    description : string; 
 }
