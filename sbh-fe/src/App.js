@@ -1,13 +1,17 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
+import "materialize-css"
 
-const Hello = styled.Hello `
+const header = styled.div `
+  wight: 100%;
   height: 50px;
+  color-backgraunf: red;
 `;
 
 function App() {
     return ( 
-      <Hello> Hello </Hello>
+      <header> Hell </header>
+
     )
 }
 
