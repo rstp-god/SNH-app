@@ -10,7 +10,7 @@ const header = styled.div `
 
 function App() {
     return ( 
-      <header> Hell </header>
+      <header> Hello World! </header>
 
     )
 }
