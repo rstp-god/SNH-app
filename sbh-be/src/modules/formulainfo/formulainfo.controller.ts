@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, Delete, HttpException, HttpStatus, Query } from '@nestjs/common';
 import { FormulainfoService } from './formulainfo.service';
 import { FormulaInfo } from 'src/entities/formulainfo.entity';
 
@@ -11,4 +11,16 @@ export class FormulainfoController {
     getAllFormulaInfo(): Promise<FormulaInfo[]> {
         return this.FormulainfoService.findAll(); 
     }
+
+    @Get(':id')
+    getFormulaInfobyId(@Param() id: number): Promise<FormulaInfo> {
+        return this.FormulainfoService.findByid(id);
+    }
+
+    @Delete(':id') 
+    deleteFormula(@Param()id:number) : HttpException {
+        this.FormulainfoService.delete(id); 
+        return new HttpException('Product is deleted everything is OK!', HttpStatus.OK); 
+        }
+
 }
