@@ -1,18 +1,19 @@
-import React from "react"
+import React from 'react'
+//import ReactDOM from 'react-dom'
 import styled from "styled-components"
 import "materialize-css"
 
-const header = styled.div `
+const he = styled.div `
   wight: 100%;
   height: 50px;
-  color-backgraunf: red;
+  color-backgraund: red;
 `;
 
-function App() {
-    return ( 
-    
-      <header> Hello World! </header>
-      <header> Hello World! </header>
+function App(){
+  return( 
+    <div>
+      <he> Hello World! </he>
+    </div>
     )
 }
 
