@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {Component} from 'react'
 //import ReactDOM from 'react-dom'
 import styled from "styled-components"
-import "materialize-css"
+//import "materialize-css"
 
 const he = styled.div `
   wight: 100%;
@@ -9,12 +9,14 @@ const he = styled.div `
   color-backgraund: red;
 `;
 
-function App(){
+class App extends Component{
+  render(){
   return( 
     <div>
       <he> Hello World! </he>
     </div>
     )
+  }
 }
 
 export default App;
