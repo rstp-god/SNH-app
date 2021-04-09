@@ -8,7 +8,11 @@ export class FormulainfoController {
     constructor( private readonly FormulainfoService : FormulainfoService) {}
 
     @Get() 
-    getAllFormulaInfo(): Promise<FormulaInfo[]> {
+    getAllFormulaInfo(@Query('name') name:string): Promise<FormulaInfo[]> {
+        if (name !== ''){
+            console.log('name');
+            return this.FormulainfoService.findByName(name);
+        }
         return this.FormulainfoService.findAll(); 
     }
 

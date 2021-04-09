@@ -15,6 +15,10 @@ export class FormulainfoService {
         return this.infoRepo.find(); 
     }
 
+    findByName(name: string) : Promise<FormulaInfo[]> {
+        return this.infoRepo.find({formulaName : name});
+    }
+
     findByid(id:number)  : Promise<FormulaInfo> {
         return this.infoRepo.findOne(id); 
     }
