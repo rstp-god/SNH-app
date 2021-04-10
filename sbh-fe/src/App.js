@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import "materialize-css"
+import List from './modules/list/list'
 
-const header = styled.div `
+const Header = styled.div `
   wight: 100%;
   height: 50px;
   color-backgraunf: red;
@@ -10,8 +10,12 @@ const header = styled.div `
 
 function App() {
     return ( 
-      <header> Hell </header>
-
+      <>
+      <Header> Hell </Header>
+      <List></List>
+      <List></List>
+      <List></List>
+      </>
     )
 }
 
