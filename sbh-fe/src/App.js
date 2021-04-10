@@ -1,22 +1,54 @@
-import React, {Component} from 'react'
-//import ReactDOM from 'react-dom'
-import styled from "styled-components"
-//import "materialize-css"
+import React from "react";
+import styled from "styled-components";
 
-const he = styled.div `
+const Container = styled.div`
   wight: 100%;
   height: 50px;
   color-backgraund: red;
-`;
+`
+const Header = styled(Container)`
 
-class App extends Component{
-  render(){
-  return( 
-    <div>
-      <he> Hello World! </he>
-    </div>
-    )
-  }
+`
+
+const Name = styled.h1`
+
+`
+
+const Menu = styled.ui`
+
+`
+
+const MBlock = styled.li`
+
+`
+
+const Main = styled(Container)`
+  wight: 100%;
+  color: blue;
+`
+
+const Footer = styled(Container)`
+
+`
+
+function App() {
+  return (
+    <Container>
+      <Header>
+        <Menu>
+          <MBlock></MBlock>
+          <MBlock></MBlock>
+          <MBlock></MBlock>
+        </Menu>
+        <Name>MATH</Name>
+      </Header>
+      <Main>
+      </Main>
+      <Footer>
+      </Footer>
+    </Container>
+
+  )
 }
 
 export default App;
