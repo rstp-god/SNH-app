@@ -1,6 +1,6 @@
-import React from "react"
+import React, { Component } from "react"
 import styled from "styled-components"
-import List from './modules/list/list'
+import List from './modules/List/List'
 
 const Header = styled.div `
   wight: 100%;
@@ -8,15 +8,21 @@ const Header = styled.div `
   color-backgraunf: red;
 `;
 
-function App() {
-    return ( 
+export default class App extends Component {
+
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
       <>
       <Header> Hell </Header>
-      <List></List>
-      <List></List>
-      <List></List>
-      </>
+      <List title = 'Gay'></List>
+      <List title = 'You'></List>
+      <List title = 'pedro'></List>
+      </>      
     )
-}
-
-export default App;
+  }
+};

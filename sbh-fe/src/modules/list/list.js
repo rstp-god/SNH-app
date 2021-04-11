@@ -10,7 +10,11 @@ const Container = styled.div`
 
 export default class List extends Component {   
 
+    constructor(props) {
+        super(props);
+    }
+
     render () {
-        return <Container> Hello World </Container>
+        return <Container> {this.props.title} </Container>
     }
 }
