@@ -1,15 +1,11 @@
+<<<<<<< HEAD
 import React, { Component } from "react"
 import styled from "styled-components"
 import List from './modules/List/List'
+import Header from "./Header"
 
-const Header = styled.div `
-  wight: 100%;
-  height: 50px;
-  color-backgraunf: red;
-`;
 
 export default class App extends Component {
-
 
   constructor(props) {
     super(props);
@@ -18,7 +14,7 @@ export default class App extends Component {
   render() {
     return (
       <>
-      <Header> Hell </Header>
+      <Header/>
       <List title = 'Gay'></List>
       <List title = 'You'></List>
       <List title = 'pedro'></List>
