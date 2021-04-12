@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import List from './modules/List/List'
+import List from './modules/list/list'
 import Header from "./modules/Header/Header"
 
 
