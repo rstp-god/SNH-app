@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 import React, { Component } from "react"
-import styled from "styled-components"
 import List from './modules/List/List'
-import Header from "./Header"
+import Header from "./modules/Header/Header"
 
 
 export default class App extends Component {
@@ -10,7 +8,6 @@ export default class App extends Component {
   constructor(props) {
     super(props);
   }
-
   render() {
     return (
       <>
