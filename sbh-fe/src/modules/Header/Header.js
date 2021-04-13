@@ -2,21 +2,21 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 100%;
   height: 100px;
   background-color: red;
+  margin: 0 auto;
+  min-width: 280px;
+  max-width: 1024px;
 `
 const Head = styled(Container)`
-  width: 100%;
   height: 40px;
   padding-top: 30px;
-`
-
-const Name = styled.h1`
-  width: auto;
-  height: 40px;
   background-color: green;
-  margin: 0;
+`
+const H1 = styled.h1`
+  margin:0;
+  width: 85px;
+  float: left;
 `
 
 const Logo = styled.a`
@@ -54,13 +54,12 @@ function Header() {
   return (
     <Container>
       <Head>
-        <Name><Logo><center>M</center></Logo>ath
+        <H1><Logo><center>M</center></Logo>ath</H1>
         <Menu>
           <Btn>Geom</Btn>
           <Btn>Algebra</Btn>
           <Btn>Physics</Btn>
         </Menu>
-        </Name>
       </Head>
     </Container>
 
