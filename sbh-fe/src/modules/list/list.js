@@ -1,7 +1,12 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 
+import ItemList from '../ItemList/ItemList'; 
+
+
 const Container = styled.div`
+    display : flex; 
+    flex-direction : column ; 
     width : 100% ; 
     box-sizing : border-box; 
     border : 1px solid black; 
@@ -10,11 +15,11 @@ const Container = styled.div`
 
 export default class List extends Component {   
 
-    constructor(props) {
-        super(props);
-    }
-
     render () {
-        return <Container> {this.props.title} </Container>
+        return <Container>
+            <ItemList title='Formula 1'/>
+            <ItemList title='Formula 2'/>
+            <ItemList title='Formula 3'/>
+        </Container> 
     }
 }
