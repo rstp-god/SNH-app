@@ -5,6 +5,7 @@ import ItemList from '../ItemList/ItemList';
 
 
 const Container = styled.div`
+    font-family: 'Rubik', sans-serif;
     display : flex; 
     flex-direction : column ; 
     width : 100% ; 
