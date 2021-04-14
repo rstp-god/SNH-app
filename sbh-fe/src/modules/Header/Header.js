@@ -2,18 +2,29 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  height: 100px;
-  background-color: red;
   margin: 0 auto;
-  min-width: 280px;
+  height: 100px;
+  min-width: 260px;
   max-width: 1024px;
 `
-const Head = styled(Container)`
+const Head = styled.header`
+  background-color: #FF5D40;
+  width: 100%;
+  height: 100px;
+  float: left;
+`
+
+const Head2 = styled(Container)`
+  margin-top: 30px;
   height: 40px;
-  padding-top: 30px;
-  background-color: green;
+  width: 100em;
+  max-width: 1004px;
+  background-color: #37DD6F;
+  float: left;
+  padding: 0 10px;
 `
 const H1 = styled.h1`
+  height: 35px;
   margin:0;
   width: 85px;
   float: left;
@@ -25,13 +36,12 @@ const Logo = styled.a`
   height: 35px;
   border: 2px;
   border-radius: 50px;
-  background-color: blue;
+  background-color: #437DD4;
   display: inline-block;
-  padding: auto;
 `
 
 const Menu = styled.menu`
-  width: 195px;  
+  width: auto;  
   height: 40px;
   float: right;
   margin: 0;
@@ -39,30 +49,26 @@ const Menu = styled.menu`
 `
 
 const Btn = styled.button`
-  width: 65px;  
+  padding: 0;
+  width: 55px;  
   height: 40px;
-  float: right;
-  border-color: whith;
-  background-color: green;
-  border-width: 4px;
-  border-style: outset;
-  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-  border-image: initial;
+  background-color: #437DD4;
 `
 
 function Header() {
   return (
-    <Container>
-      <Head>
-        <H1><Logo><center>M</center></Logo>ath</H1>
-        <Menu>
+    <Head>
+      <Container>
+        <Head2>
+          <H1><Logo><center>M</center></Logo>ath</H1>
+          <Menu>
           <Btn>Geom</Btn>
           <Btn>Algebra</Btn>
           <Btn>Physics</Btn>
         </Menu>
-      </Head>
-    </Container>
-
+      </Head2>
+      </Container>
+    </Head>
   )
 }
 
