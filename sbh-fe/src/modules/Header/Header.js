@@ -17,7 +17,7 @@ const Head = styled.header`
 const Head2 = styled(Container)`
   margin-top: 30px;
   height: 40px;
-  width: 100em;
+  width: 100px;
   max-width: 1004px;
   background-color: #37DD6F;
   float: left;
@@ -53,7 +53,10 @@ const Btn = styled.button`
   width: 55px;  
   height: 40px;
   background-color: #437DD4;
+
 `
+
+
 
 function Header() {
   return (
