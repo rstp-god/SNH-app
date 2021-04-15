@@ -1,7 +1,8 @@
 import React, {Component} from 'react'; 
 import styled from 'styled-components'; 
+import { Link}  from 'react-router-dom';
 
-const Item=styled.a`
+const Item=styled.div`
     width: 20%; 
     height : 10%; 
     padding : 1em; 
@@ -10,7 +11,7 @@ const Item=styled.a`
     border : 1px solid black; 
     letter-spacing: 3px; 
     &::after {
-        margin-left: 68%; 
+        margin-left: 65%; 
         content : url(https://img.icons8.com/android/24/000000/long-arrow-right.png);
     }
     &:hover{ 
@@ -25,7 +26,11 @@ export default class ItemList extends Component {
     }
 
     render () {
-        return <Item href=''>{this.props.title}</Item>
+        return <Link to='/inspect'> 
+            <Item>
+            {this.props.title}
+            </Item>
+            </Link>
     }
 
 }
