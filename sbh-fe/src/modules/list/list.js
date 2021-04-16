@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
-import { BrowserRouter as Router, Route} from 'react-router-dom';
 import styled from 'styled-components'
 
 import ItemList from '../ItemList/ItemList'; 
-import Inspect from '../Formula Inspect/Inspect';
+
 
 
 const Container = styled.div`
@@ -19,13 +18,12 @@ const Container = styled.div`
 export default class List extends Component {   
 
     render () {
-        return <Router>
+        return (
         <Container>
-            <Route path='/inspect' component={Inspect}/> 
             <ItemList title='Formula 1'/>
             <ItemList title='Formula 2'/>
             <ItemList title='Formula 3'/>
         </Container> 
-        </Router>
+        )
     }
 }
