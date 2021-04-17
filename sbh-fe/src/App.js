@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { Component } from "react"; 
 import {BrowserRouter as Router , Route} from 'react-router-dom';
 import styled from 'styled-components' ; 
@@ -17,15 +16,15 @@ const Wrapper = styled.div`
   width: 100%; 
   box-sizing : border-box; 
   display: flex; 
+  flex-direction: column; 
   justify-content : space-between;
+  align-items: center; 
   border : 1px solid black;
+  &item{
+    padding-top:2%; 
+  }
 `
 
-=======
-import React, { Component } from "react"
-import List from './modules/list/list'
-import Header from "./modules/Header/Header"
->>>>>>> igordevs
 
 
 export default class App extends Component {
@@ -39,7 +38,7 @@ export default class App extends Component {
       <Route path='/list' component={List}/>
       <Route path='/inspect' component={Inspect}/>
       <Wrapper>
-        <Math/>
+        <Math class='item'/>
         <Physics/>
         <Geometry/>
       </Wrapper>
@@ -47,4 +46,4 @@ export default class App extends Component {
       </Router> 
     )
   }
-};
+}
