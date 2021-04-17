@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from "react"; 
 import {BrowserRouter as Router , Route} from 'react-router-dom';
 import styled from 'styled-components' ; 
@@ -20,6 +21,11 @@ const Wrapper = styled.div`
   border : 1px solid black;
 `
 
+=======
+import React, { Component } from "react"
+import List from './modules/list/list'
+import Header from "./modules/Header/Header"
+>>>>>>> igordevs
 
 
 export default class App extends Component {
