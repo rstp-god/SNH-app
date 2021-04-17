@@ -6,6 +6,7 @@ const Container = styled.div`
   height: 100px;
   min-width: 260px;
   max-width: 1024px;
+  box-sizing: border-box;
 `
 const Head = styled.header`
   background-color: #FF5D40;
@@ -17,7 +18,7 @@ const Head = styled.header`
 const Head2 = styled(Container)`
   margin-top: 30px;
   height: 40px;
-  width: 100px;
+  width: 100%;
   max-width: 1004px;
   background-color: #37DD6F;
   float: left;
