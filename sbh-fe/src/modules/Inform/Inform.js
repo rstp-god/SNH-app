@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled from 'styled-components'; 
 
 const Square = styled.div`
 display: flex; 
 justify-content: center;
-margin-top: 1%;
+margin-top:1%;
 box-sizing : border-box; 
 width : 30%;
-height : 100%;
+height : 30%;
 border : 1px solid black;
 border-radius: 50px;
 -webkit-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
@@ -20,12 +20,11 @@ box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
 `
 
 
-export default class Math extends Component {
+export default class Physics extends Component {
 
-    render () {
-
+    render() {
         return (
-            <Square><Link to='/'>Math</Link></Square>
-        )
+        <Square><Link to='/'>Informatics</Link></Square>
+        ) ; 
     }
 }

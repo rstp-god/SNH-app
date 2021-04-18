@@ -10,6 +10,7 @@ import Inspect from "./modules/Formula Inspect/Inspect";
 import Math from './modules/Math/Math'
 import Physics from "./modules/Physics/Physics";
 import Geometry from "./modules/Geometry/Geometry";
+import Inform from "./modules/Inform/Inform";
 
 
 const Wrapper = styled.div`
@@ -20,11 +21,7 @@ const Wrapper = styled.div`
   justify-content : space-between;
   align-items: center; 
   border : 1px solid black;
-  &item{
-    padding-top:2%; 
-  }
 `
-
 
 
 export default class App extends Component {
@@ -38,9 +35,10 @@ export default class App extends Component {
       <Route path='/list' component={List}/>
       <Route path='/inspect' component={Inspect}/>
       <Wrapper>
-        <Math class='item'/>
+        <Math/>
         <Physics/>
         <Geometry/>
+        <Inform/>
       </Wrapper>
       </>     
       </Router> 
