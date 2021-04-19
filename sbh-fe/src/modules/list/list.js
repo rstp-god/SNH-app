@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
 import ItemList from '../ItemList/ItemList'; 
-
-
 
 const Container = styled.div`
     display : flex; 
@@ -17,12 +16,45 @@ const Container = styled.div`
 export default class List extends Component {   
 
     render () {
-        return (
-        <Container>
-            <ItemList title='Formula 1'/>
-            <ItemList title='Formula 2'/>
-            <ItemList title='Formula 3'/>
-        </Container> 
-        )
+        if (this.props.block === 'informatic') {
+            return (
+                <Container>
+                <ItemList title='Informatic Formula 1'/>
+                <ItemList title='Informatic Formula 2'/>
+                <ItemList title='Informatic Formula 3'/>
+                <Link to='/'>Back</Link>
+                </Container>
+            )
+        }
+        if (this.props.block === 'math') {
+            return (
+                <Container>
+                <ItemList title='Math Formula 1'/>
+                <ItemList title='Math Formula 2'/>
+                <ItemList title='Math Formula 3'/>
+                <Link to='/'>Back</Link>
+                </Container>
+            )
+        }
+        if (this.props.block === 'physics') {
+            return (
+                <Container>
+                <ItemList title='Physics Formula 1'/>
+                <ItemList title='Physics Formula 2'/>
+                <ItemList title='Physics Formula 3'/>
+                <Link to='/'>Back</Link>
+                </Container>
+            )
+        }
+        if (this.props.block === 'geom') {
+            return (
+                <Container>
+                <ItemList title='Geometry Formula 1'/>
+                <ItemList title='Geometry Formula 2'/>
+                <ItemList title='Geometry Formula 3'/>
+                <Link to='/'>Back</Link>
+                </Container>
+            )
+        }
     }
 }

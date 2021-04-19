@@ -15,7 +15,8 @@ border-radius: 50px;
 -moz-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
 box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
 &:hover { 
-    transform:translateX(10px);
+    transition: 1s; 
+    transform: scale(1.1); 
 }
 `
 
@@ -25,7 +26,7 @@ export default class Math extends Component {
     render () {
 
         return (
-            <Square><Link to='/'>Math</Link></Square>
+            <Square><Link to='/math'>Math</Link></Square>
         )
     }
 }
