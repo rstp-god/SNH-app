@@ -9,7 +9,7 @@ const Container = styled.div`
   box-sizing: border-box;
 `
 const Head = styled.header`
-  background-color: #FF5D40;
+  background-color: #171515;
   width: 100%;
   height: 100px;
   float: left;
@@ -20,41 +20,57 @@ const Head2 = styled(Container)`
   height: 40px;
   width: 100%;
   max-width: 1004px;
-  background-color: #37DD6F;
+  background-color: #DFD4D4;
   float: left;
-  padding: 0 10px;
+  padding: 0 0 0 10px;
 `
 const H1 = styled.h1`
-  height: 35px;
+  height: 40px;
   margin:0;
-  width: 85px;
+  width: 90px;
   float: left;
+  color: #171515;
 `
 
 const Logo = styled.a`
   font-size: 30px;
+  color: #DFD4D4;
   width: 35px;
   height: 35px;
   border: 2px;
   border-radius: 50px;
-  background-color: #437DD4;
+  background-color: #171515;
   display: inline-block;
 `
 
 const Menu = styled.menu`
-  width: auto;  
-  height: 40px;
+  width: 90%;
+  height: 30px;
   float: right;
   margin: 0;
-  padding: 0;
+  padding: 5px 0;
+  min-width: 160px;
+  max-width: 884px;
 `
 
-const Btn = styled.button`
-  padding: 0;
-  width: 55px;  
-  height: 40px;
-  background-color: #437DD4;
+const Btn = styled.a`
 
+  padding: 5px 0;
+  width: 30%; 
+  min-width: 50px; 
+  height: 30px;
+  text-align: center;
+  font-size: 12px;
+  display: inline-block;
+  margin: 0 1%;
+  border: 2px solid #FFF;
+  box-sizing: border-box;
+  border-radius: 10px;
+&:hover{
+  background-color: #171515;
+  color: #DFD3D5;
+  border: 2px solid #000;
+  text-align: center;}
 `
 
 
