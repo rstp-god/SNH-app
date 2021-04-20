@@ -16,7 +16,7 @@ border-radius: 50px;
 box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
 &:hover { 
     transform:translateX(10px);
-}
+}   
 `
 
 

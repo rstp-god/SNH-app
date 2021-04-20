@@ -3,13 +3,17 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TestconnectionModule } from './modules/testconnection/testconnection.module';
-import { FormulainfoModule } from './modules/formulainfo/formulainfo.module';
+import { GeometryModule } from './modules/Geometry/Geometry.module';
+import { MathModule } from './modules/math/math.module';
+import { PhysicsModule } from './modules/physics/physics.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(), 
     TestconnectionModule, 
-    FormulainfoModule
+    GeometryModule,
+    MathModule, 
+    PhysicsModule
   ],
   controllers: [AppController],
   providers: [AppService],

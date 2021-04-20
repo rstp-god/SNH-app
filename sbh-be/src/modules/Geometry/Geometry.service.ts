@@ -1,25 +1,25 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FormulaInfo } from 'src/entities/formulainfo.entity';
+import { Geometry } from 'src/entities/Geometry.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
-export class FormulainfoService {
+export class GeometryService {
 
     constructor(
-        @InjectRepository(FormulaInfo)
-        private readonly infoRepo : Repository<FormulaInfo>
+        @InjectRepository(Geometry)
+        private readonly infoRepo : Repository<Geometry>
     ) {}
 
-    findAll() : Promise<FormulaInfo[]> {
+    findAll() : Promise<Geometry[]> {
         return this.infoRepo.find(); 
     }
 
-    findByName(name: string) : Promise<FormulaInfo[]> {
+    findByName(name: string) : Promise<Geometry[]> {
         return this.infoRepo.find({formulaName : name});
     }
 
-    findByid(id:number)  : Promise<FormulaInfo> {
+    findByid(id:number)  : Promise<Geometry> {
         return this.infoRepo.findOne(id); 
     }
 

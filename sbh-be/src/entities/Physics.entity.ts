@@ -2,7 +2,7 @@
 
 @Entity() 
 
-export class FormulaInfo {
+export class Physics {
     
     @PrimaryGeneratedColumn() 
     id: number; 
