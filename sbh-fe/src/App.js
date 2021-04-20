@@ -1,5 +1,5 @@
 import React, { Component } from "react"; 
-import {BrowserRouter as Router , Route} from 'react-router-dom';
+import {BrowserRouter as Router , Route, Switch} from 'react-router-dom';
 import styled from 'styled-components' ; 
 
 
@@ -22,7 +22,15 @@ const Wrapper = styled.div`
   align-items: center; 
   border : 1px solid black;
 `
-
+function Home() {
+  return ( 
+  <Wrapper>
+  <Math/>
+  <Physics/>
+  <Geometry/>
+  <Inform/>
+  </Wrapper> ) 
+}
 
 export default class App extends Component {
 
@@ -32,15 +40,25 @@ export default class App extends Component {
       <Router>
       <>
       <Header/>
-      <Route path='/list' component={List}/>
+      <Switch>
+      <Route path='/math'> 
+         <List block='math'></List>
+      </Route>
+      <Route path='/physics'> 
+         <List block='physics'></List>
+      </Route>
+      <Route path='/geom'> 
+         <List block='geom'></List>
+      </Route>
+      <Route path='/informatics'> 
+         <List block='informatic'></List>
+      </Route>
       <Route path='/inspect' component={Inspect}/>
-      <Wrapper>
-        <Math/>
-        <Physics/>
-        <Geometry/>
-        <Inform/>
-      </Wrapper>
-      </>     
+      <Route path='/'>
+        <Home/>
+      </Route>
+      </Switch>
+      </>
       </Router> 
     )
   }
