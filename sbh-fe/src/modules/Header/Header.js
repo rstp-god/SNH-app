@@ -43,6 +43,17 @@ const Logo = styled.a`
   display: inline-block;
 `
 
+const Burger = styled.div`
+  width: 40px;
+  height: 40px;
+  float: right;
+  margin: 0 2px;
+  border-radius: 5px;
+  background-color: blue;
+  &:click{
+  }
+`
+
 const Menu = styled.menu`
   width: 90%;
   height: 30px;
@@ -54,9 +65,8 @@ const Menu = styled.menu`
 `
 
 const Btn = styled.a`
-
   padding: 5px 0;
-  width: 30%; 
+  width: 22%; 
   min-width: 50px; 
   height: 30px;
   text-align: center;
@@ -75,21 +85,33 @@ const Btn = styled.a`
 
 
 
-function Header() {
+let menuStyle = {
+  display: "none"
+};
+  function MenuBurger(e){
+    console.log('sd')
+    let block = "block"
+    menuStyle.display  = block;
+  }
+class Header extends React.Component{
+render(){
+
   return (
     <Head>
       <Container>
         <Head2>
           <H1><Logo><center>M</center></Logo>ath</H1>
-          <Menu>
-          <Btn>Geom</Btn>
-          <Btn>Algebra</Btn>
-          <Btn>Physics</Btn>
+          <Burger onClick={MenuBurger}></Burger>
+          <Menu style={menuStyle}>
+            <Btn>Geom</Btn>
+            <Btn>Algebra</Btn>
+            <Btn>Physics</Btn>
+            <Btn>Inform</Btn>
         </Menu>
       </Head2>
       </Container>
     </Head>
   )
-}
+}}
 
 export default Header
