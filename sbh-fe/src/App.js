@@ -22,7 +22,6 @@ const Wrapper = styled.div`
   align-items: center; 
   border : 1px solid black;
 `
-<<<<<<< HEAD
 function Home() {
   return ( 
   <Wrapper>
@@ -32,8 +31,6 @@ function Home() {
   <Inform/>
   </Wrapper> ) 
 }
-=======
->>>>>>> igordevs
 
 export default class App extends Component {
 
