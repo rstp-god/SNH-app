@@ -16,6 +16,7 @@ import Inform from "./modules/Inform/Inform";
 const Wrapper = styled.div`
   width: 100%; 
   box-sizing : border-box; 
+  height: 1200px; 
   display: flex; 
   flex-direction: column; 
   justify-content : space-between;
