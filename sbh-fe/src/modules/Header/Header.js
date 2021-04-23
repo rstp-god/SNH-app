@@ -23,20 +23,22 @@ const Head2 = styled(Container)`
   background-color: #DFD4D4;
   float: left;
   padding: 0 0 0 10px;
+  border-radius: 10px;
 `
 const H1 = styled.h1`
   height: 40px;
   margin:0;
-  width: 90px;
+  width: 100px;
   float: left;
   color: #171515;
+  font-size: 25px;
 `
 
 const Logo = styled.a`
-  font-size: 30px;
+  font-size: 28px;
   color: #DFD4D4;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border: 2px;
   border-radius: 50px;
   background-color: #171515;
@@ -47,21 +49,22 @@ const Burger = styled.div`
   width: 40px;
   height: 40px;
   float: right;
-  margin: 0 2px;
-  border-radius: 5px;
+  margin: 0;
+  border-radius:5px 0 0 5px ;
   background-color: blue;
   &:click{
   }
 `
 
 const Menu = styled.menu`
-  width: 90%;
+  width: 80%;
   height: 30px;
   float: right;
   margin: 0;
-  padding: 5px 0;
+  padding: 0px 0;
   min-width: 160px;
   max-width: 884px;
+  font-size: 25px;
 `
 
 const Btn = styled.a`
@@ -83,17 +86,15 @@ const Btn = styled.a`
   text-align: center;}
 `
 
-
-
 let menuStyle = {
-  display: "none"
+  display: 'none'
 };
-  function MenuBurger(e){
-    console.log('sd')
-    let block = "block"
-    menuStyle.display  = block;
-  }
+
 class Header extends React.Component{
+  MenuBurger = (e) =>{
+    let mi = document.querySelector('menu')
+    mi.style.display  = "block";
+  }
 render(){
 
   return (
@@ -101,8 +102,8 @@ render(){
       <Container>
         <Head2>
           <H1><Logo><center>M</center></Logo>ath</H1>
-          <Burger onClick={MenuBurger}></Burger>
-          <Menu style={menuStyle}>
+          <Burger onClick={this.MenuBurger}></Burger>
+          <Menu style = {menuStyle}>
             <Btn>Geom</Btn>
             <Btn>Algebra</Btn>
             <Btn>Physics</Btn>
