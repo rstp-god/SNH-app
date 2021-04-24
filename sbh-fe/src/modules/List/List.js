@@ -9,7 +9,6 @@ const Container = styled.div`
     flex-direction : column ; 
     width : 100% ; 
     box-sizing : border-box; 
-    border : 1px solid black; 
 `
 
 

@@ -22,9 +22,10 @@ box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
 `
 
 const LinkStyle = styled(Link)`
-    font-size:70px; 
+    font-size:50px; 
     color: black;
     text-decoration: none; 
+    letter-spacing: 2px; 
 `
 
 

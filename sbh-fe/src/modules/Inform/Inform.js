@@ -22,8 +22,9 @@ box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
 `
 
 const LinkStyle = styled(Link)`
-    font-size:40px; 
+    font-size:50px; 
     color: black;
+    letter-spacing: 2px; 
     text-decoration: none; 
 `
 
@@ -32,7 +33,7 @@ export default class Inform extends Component {
 
     render() {
         return (
-        <Square><LinkStyle to='/informatics'>Informatics</LinkStyle></Square>
+        <Square><LinkStyle to='/informatics'>Inform</LinkStyle></Square>
         ) ; 
     }
 }

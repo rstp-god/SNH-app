@@ -25,12 +25,13 @@ const LinkStyle = styled(Link)`
     font-size:50px; 
     color: black;
     text-decoration: none; 
+    letter-spacing: 2px; 
 `
 
 
 export default class Geometry extends Component {
 
     render() {
-        return (<Square><LinkStyle to='/geom'>Geometry</LinkStyle></Square>) ; 
+        return (<Square><LinkStyle to='/geom'>Geom</LinkStyle></Square>) ; 
     }
 }
