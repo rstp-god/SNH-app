@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import burgerImg from "./img/Burger.png"
+import hburgerImg from "./img/hBurger.png"
 
 const Container = styled.div`
   margin: 0 auto;
@@ -9,7 +11,7 @@ const Container = styled.div`
   box-sizing: border-box;
 `
 const Head = styled.header`
-  background-color: #171515;
+  background-color: #FFF;
   width: 100%;
   height: 100px;
   float: left;
@@ -20,39 +22,39 @@ const Head2 = styled(Container)`
   height: 40px;
   width: 100%;
   max-width: 1004px;
-  background-color: #DFD4D4;
+  background-color: #FFF;;
   float: left;
   padding: 0 0 0 10px;
-  border-radius: 10px;
 `
 const H1 = styled.h1`
   height: 40px;
   margin:0;
   width: 100px;
   float: left;
-  color: #171515;
+  color: #DFD4D4;
   font-size: 25px;
 `
 
 const Logo = styled.a`
   font-size: 28px;
-  color: #DFD4D4;
+  color: #171515;
   width: 40px;
   height: 40px;
   border: 2px;
   border-radius: 50px;
-  background-color: #171515;
+  background-color: #DFD4D4;
   display: inline-block;
 `
 
-const Burger = styled.div`
+const Burger = styled.img`
   width: 40px;
   height: 40px;
   float: right;
   margin: 0;
-  border-radius:5px 0 0 5px ;
-  background-color: blue;
-  &:click{
+  border-radius:5px;
+  background-image: url(${burgerImg});
+  &:hover{
+    background-image: url(${hburgerImg});
   }
 `
 
@@ -76,24 +78,36 @@ const Btn = styled.a`
   font-size: 12px;
   display: inline-block;
   margin: 0 1%;
-  border: 2px solid #FFF;
+  border: 2px solid #DFD4D4;
   box-sizing: border-box;
   border-radius: 10px;
+  color: #171515;
 &:hover{
-  background-color: #171515;
-  color: #DFD3D5;
+  width: 24%; 
+  background-color: #DFD4D4;
+  color: #000;
   border: 2px solid #000;
-  text-align: center;}
+  text-align: center;
+-webkit-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+-moz-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719)}
 `
 
 let menuStyle = {
   display: 'none'
 };
 
+    let c = true
 class Header extends React.Component{
   MenuBurger = (e) =>{
     let mi = document.querySelector('menu')
-    mi.style.display  = "block";
+    if(c){
+      mi.style.display  = "block";
+      c = false
+    }else{
+      mi.style.display  = "none";
+      c = true
+    }
   }
 render(){
 
