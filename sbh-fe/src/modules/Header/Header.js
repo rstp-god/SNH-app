@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import burgerImg from "./img/Burger.png"
-import hburgerImg from "./img/hBurger.png"
+import burgerImg from "./../../img/Burger.png"
+import hburgerImg from "./../../img/hBurger.png"
 
 const Container = styled.div`
   margin: 0 auto;
