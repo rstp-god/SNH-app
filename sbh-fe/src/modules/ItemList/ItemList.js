@@ -2,30 +2,27 @@ import React, {Component} from 'react';
 import styled from 'styled-components'; 
 import { Link}  from 'react-router-dom';
 
-const Item=styled.div`
+const Item=styled.ul`
     width: 100%; 
     height : 8%; 
     box-sizing: border-box;
     max-width:500px;
-    margin-top: 10%!important;
-    padding : 1em; 
+    margin-top: 2%!important;
     margin: 0 auto; 
-    border-radius : 0 45px 45px 0; 
-    border : 1px solid black; 
-    letter-spacing: 3px; 
+    padding: 1em; 
+    border-radius: 5px;
+    border-left: 10px solid black; 
     -webkit-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
     -moz-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
     box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+    transition: 0.3s all linear;
+    letter-spacing: 3px; 
     &:hover{ 
-        transform: translate(20px); 
+        border-left: 10px solid transparent;
+        border-right: 10px solid black;
     }
 `
 
-const Triangle= styled.button`
-        border: 50px solid transparent;
-        border-left: 50px solid #333;
-        display: inline-block;
-`
 
 export default class ItemList extends Component {
 
@@ -34,14 +31,13 @@ export default class ItemList extends Component {
     }
 
     render () {
-        return <Link to='/inspect'> 
+        return (
             <Item>
+            <Link to='/inspect'> 
             {this.props.title}
-            </Item>
-            <Triangle>
-
-            </Triangle>
             </Link>
+            </Item>
+        )
     }
 
 }
