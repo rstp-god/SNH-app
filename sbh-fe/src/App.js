@@ -16,12 +16,13 @@ import Inform from "./modules/Inform/Inform";
 const Wrapper = styled.div`
   width: 100%; 
   box-sizing : border-box; 
+  margin: 0 auto; 
+  max-width: 1200px; 
   height: 1200px; 
   display: flex; 
   flex-direction: column; 
   justify-content : space-between;
   align-items: center; 
-  border : 1px solid black;
 `
 function Home() {
   return ( 

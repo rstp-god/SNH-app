@@ -1,13 +1,13 @@
 import React, {Component} from 'react'; 
 import styled from 'styled-components'; 
-import { Link}  from 'react-router-dom';
+import { Link }  from 'react-router-dom';
 
 const Item=styled.ul`
     width: 100%; 
     height : 8%; 
     box-sizing: border-box;
-    max-width:500px;
-    margin-top: 2%!important;
+    max-width:1200px;
+    margin-top: 4%!important;
     margin: 0 auto; 
     padding: 1em; 
     border-radius: 5px;
@@ -25,10 +25,6 @@ const Item=styled.ul`
 
 
 export default class ItemList extends Component {
-
-    constructor(props){
-        super(props);
-    }
 
     render () {
         return (
