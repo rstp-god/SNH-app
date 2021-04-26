@@ -10,6 +10,7 @@ const Item=styled.ul`
     margin-top: 4%!important;
     margin: 0 auto; 
     padding: 1em; 
+    text-decoration: none; 
     border-radius: 5px;
     border-left: 10px solid black; 
     -webkit-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
@@ -23,15 +24,23 @@ const Item=styled.ul`
     }
 `
 
+const LinkStyle = styled(Link)`
+    width:10%;
+    color: black;
+    margin: 0 auto; 
+    text-decoration: none; 
+    padding : 0 1em;
+`
+
 
 export default class ItemList extends Component {
 
     render () {
         return (
             <Item>
-            <Link to='/inspect'> 
+            <LinkStyle to='/inspect'> 
             {this.props.title}
-            </Link>
+            </LinkStyle>
             </Item>
         )
     }

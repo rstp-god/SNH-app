@@ -17,21 +17,49 @@ const ListStyled = styled.ul`
     padding: 0 ; 
 `
 
-const LinkStyle = styled(Link)`
+/* const LinkStyle = styled(Link)`
     width:10%;
     color: black;
     margin: 0 auto; 
     text-decoration: none; 
     padding : 0 1em;
-`
+    font-size: 18px; 
+`*/
 
 const SearchLine = styled.input`
     box-sizing: border-box; 
-    width:90%;
+    width:100%;
+    height: 35px; 
     padding : 0 1em;
     border-radius : 45px;
     border: 1px solid black; 
     outline:none;
+    ::-webkit-input-placeholder {
+    font-family: Playfair Display SC, serif;
+    letter-spacing: 2px; 
+    text-align: center;
+    color: black; 
+    }
+    :-moz-placeholder {
+        color: black; 
+        letter-spacing: 2px; 
+        font-family: Playfair Display SC, serif;
+   text-align: center;
+}
+
+::-moz-placeholder { 
+    color: black; 
+    letter-spacing: 2px; 
+    font-family: Playfair Display SC, serif;
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+    letter-spacing: 2px; 
+    color: black; 
+    font-family: Playfair Display SC, serif;
+   text-align: center;
+}
 `
 
 const LinkContainer = styled.div`
@@ -54,8 +82,7 @@ export default class List extends Component {
             return (
                 <Container>
                 <LinkContainer>
-                <LinkStyle to='/'>Back</LinkStyle>
-                <SearchLine type='serach'/>
+                <SearchLine type='serach' placeholder='Search'/>
                 </LinkContainer>
                 <ListStyled>
                 <ItemList title='Informatic Formula 1'/>
@@ -63,14 +90,13 @@ export default class List extends Component {
                 <ItemList title='Informatic Formula 3'/>
                 </ListStyled>
                 </Container>
-            )
+            )   
         }
         if (this.props.block === 'math') {
             return (
                 <Container>
                 <LinkContainer>
-                <LinkStyle to='/'>Back</LinkStyle>
-                <SearchLine/>
+                <SearchLine type='serach' placeholder='Search'/>
                 </LinkContainer>
                 <ListStyled>
                 <ItemList title='Math Formula 1'/>
@@ -84,8 +110,7 @@ export default class List extends Component {
             return (
                 <Container>
                 <LinkContainer>
-                <LinkStyle to='/'>Back</LinkStyle>
-                <SearchLine/>
+                <SearchLine type='serach' placeholder='Search'/>
                 </LinkContainer>
                 <ListStyled>
                 <ItemList title='Physics Formula 1'/>
@@ -99,8 +124,7 @@ export default class List extends Component {
             return (
                 <Container>
                 <LinkContainer>
-                <LinkStyle to='/'>Back</LinkStyle>
-                <SearchLine/>
+                <SearchLine type='serach' placeholder='Search'/>
                 </LinkContainer>
                 <ListStyled>
                 <ItemList title='Geometry Formula 1'/>
