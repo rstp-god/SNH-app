@@ -1,36 +1,48 @@
 import React, {Component} from 'react'; 
 import styled from 'styled-components'; 
-import { Link}  from 'react-router-dom';
+import { Link }  from 'react-router-dom';
 
-const Item=styled.div`
-    width: 20%; 
-    height : 10%; 
-    padding : 1em; 
+const Item=styled.ul`
+    width: 100%; 
+    height : 8%; 
+    box-sizing: border-box;
+    max-width:1200px;
+    margin-top: 4%!important;
     margin: 0 auto; 
-    border-radius : 0 45px 45px 0; 
-    border : 1px solid black; 
+    padding: 1em; 
+    text-decoration: none; 
+    border-radius: 5px;
+    border-left: 10px solid black; 
+    -webkit-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+    -moz-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+    box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+    transition: 0.3s all linear;
     letter-spacing: 3px; 
-    &::after {
-        margin-left: 65%; 
-        content : url(https://img.icons8.com/android/24/000000/long-arrow-right.png);
-    }
     &:hover{ 
-        transform: translate(20px); 
+        border-left: 10px solid transparent;
+        border-right: 10px solid black;
     }
 `
 
+const LinkStyle = styled(Link)`
+    width:10%;
+    color: black;
+    margin: 0 auto; 
+    text-decoration: none; 
+    padding : 0 1em;
+`
+
+
 export default class ItemList extends Component {
 
-    constructor(props){
-        super(props);
-    }
-
     render () {
-        return <Link to='/inspect'> 
+        return (
             <Item>
+            <LinkStyle to='/inspect'> 
             {this.props.title}
+            </LinkStyle>
             </Item>
-            </Link>
+        )
     }
 
 }

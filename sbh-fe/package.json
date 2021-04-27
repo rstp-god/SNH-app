@@ -1,12 +1,13 @@
 {
-  "name": "sbh-fe",
-  "version": "0.1.0",
+  "name": "react-help-app",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "http-server": "^0.12.3",
+    "mathjax3-react": "^1.0.11",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -39,5 +40,22 @@
   },
   "devDependencies": {
     "react-router-dom": "^5.2.0"
-  }
+  },
+  "description": "So this simple app is going to help schoolboys solve simple problems and calculate simple expressions.  \r You can choose formula and input values, after this u can get answer for question!",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azirb/SNH-app.git"
+  },
+  "keywords": [
+    "formelas",
+    "calc",
+    "react"
+  ],
+  "author": "rstp,igor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azirb/SNH-app/issues"
+  },
+  "homepage": "https://github.com/azirb/SNH-app#readme"
 }

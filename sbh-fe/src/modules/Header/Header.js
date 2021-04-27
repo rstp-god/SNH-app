@@ -4,6 +4,7 @@ import burgerImg from "./../../img/Burger.png"
 import hburgerImg from "./../../img/hBurger.png"
 import logoImg from "./../../img/logo.png"
 
+
 const Container = styled.div`
   margin: 0 auto;
   height: 100px;
@@ -58,9 +59,9 @@ const Burger = styled.img`
   float: right;
   margin: 0;
   border-radius:5px;
-  background-image: url(${burgerImg});
+  background-image: url(${window.location.origin + "/img/Burger.png"});
   &:hover{
-    background-image: url(${hburgerImg});
+    background-image: url(${window.location.origin + "/img/hBurger.png"});
   }
 `
 
