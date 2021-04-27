@@ -1,16 +1,97 @@
 import React, { Component } from "react"; 
 import {Link} from 'react-router-dom';
+import styled from 'styled-components';
+import MathJax from 'mathjax3-react';
 
+const Container = styled.div`
+    display : flex; 
+    flex-direction : column; 
+    width : 100% ; 
+    box-sizing : border-box; 
+    max-width: 1200px;
+    margin: 0 auto; 
+`
+
+const NavContainer=styled.div`
+    width: 100%; 
+    box-sizing: border-box; 
+    margin: 0 auto; 
+    border: 1px solid black;    
+`
+const FormulaContainer= styled.div`
+    width: 100%; 
+    box-sizing: border-box; 
+    margin: 2% auto; 
+    border: 1px solid black; 
+`
+
+const CalculatorContaner= styled.div`
+    display: flex; 
+    flex-direction:column;
+    width: 100%; 
+    box-sizing: border-box; 
+    margin: 2% auto; 
+    border: 1px solid black; 
+`
+
+const Answer= styled.div`
+    width: 50%; 
+    box-sizing: border-box; 
+    margin: 0 auto; 
+`
+
+const InputContainer=styled.div`
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    width: 50%; 
+`
+
+const InputCalc =styled.input`
+    width: 100%; 
+    box-sizing: border-box; 
+    margin: 0 auto; 
+`
+
+const Description=styled.div`
+    width: 100%; 
+    font-size:15px;
+    box-sizing: border-box; 
+    margin: 0 auto; 
+    border: 1px solid black;
+`
+
+const test = "$$\\frac{\\int_{-\\infty}^{+\\infty}ydx}{\\sum \\alpha \\beta +\\int x^2dx}$$"; 
 
 
 export default class Inspect extends Component {
 
-
-
     render() {
-        return <> 
-        <Link to='/list'>Back </Link>
-        boom {console.log(this.state.title)}
-        </>
+        return ( 
+        <Container> 
+             <NavContainer>
+                 <Link to='/'>Back</Link>
+             </NavContainer>
+             <FormulaContainer>
+                 <MathJax.Provider>
+                    <MathJax.Formula formula={test}/> 
+                 </MathJax.Provider>
+             </FormulaContainer>
+             <CalculatorContaner>
+                 <h1>Calculate!</h1>
+                <InputContainer>
+                <InputCalc/>
+                <InputCalc/>
+                <InputCalc/>
+                </InputContainer>
+             </CalculatorContaner>
+             <Description>
+                    <h1>Description</h1>
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas nibh at odio aliquet tincidunt. Curabitur at dui augue. Fusce scelerisque eu ipsum at mollis. Nullam in erat felis. Sed lobortis nibh neque, eu luctus sapien tristique tristique. Morbi vitae vehicula dui, id sagittis dolor. Aenean accumsan dictum nulla at consequat. Aenean malesuada tortor ligula, at pulvinar nunc laoreet eu. Nunc auctor, dolor eget iaculis facilisis, purus lectus molestie quam, in bibendum nisi velit at nisi.
+             <br/>  
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan metus in mollis euismod. Nunc finibus tincidunt odio, et porta dolor dapibus sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam vitae ante ultrices, placerat purus id, lacinia nulla. Morbi mattis ex non scelerisque pulvinar. In hac habitasse platea dictumst. Nullam sagittis elit ligula, nec suscipit odio sagittis et.
+             </Description>
+        </Container>
+        ) 
     }
 }

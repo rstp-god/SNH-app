@@ -45,21 +45,19 @@ const SearchLine = styled.input`
         letter-spacing: 2px; 
         font-family: Playfair Display SC, serif;
    text-align: center;
-}
-
-::-moz-placeholder { 
+    }
+    ::-moz-placeholder { 
     color: black; 
     letter-spacing: 2px; 
     font-family: Playfair Display SC, serif;
    text-align: center;
-}
-
-:-ms-input-placeholder {
+    }
+    :-ms-input-placeholder {
     letter-spacing: 2px; 
     color: black; 
     font-family: Playfair Display SC, serif;
    text-align: center;
-}
+    }
 `
 
 const LinkContainer = styled.div`
