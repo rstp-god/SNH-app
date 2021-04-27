@@ -1,11 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import burgerImg from "./../../img/Burger.png"
+import hburgerImg from "./../../img/hBurger.png"
+import logoImg from "./../../img/logo.png"
+
 
 const Container = styled.div`
   margin: 0 auto;
   height: 100px;
   min-width: 260px;
-  max-width: 1024px;
+  max-width: 1200px;
   box-sizing: border-box;
 `
 const Head = styled.header`
@@ -18,11 +22,11 @@ const Head = styled.header`
 const Head2 = styled(Container)`
   margin-top: 30px;
   height: 40px;
-  width: 100%;
-  max-width: 1004px;
+  width: 85vw;
+  max-width: 1090px;
+  min-width: 220px;
   background-color: #FFF;;
   float: left;
-  padding: 0 0 0 10px;
 `
 const H1 = styled.h1`
   height: 40px;
@@ -33,15 +37,20 @@ const H1 = styled.h1`
   font-size: 25px;
 `
 
-const Logo = styled.a`
+const Logo = styled.div`
   font-size: 28px;
   color: #171515;
-  width: 40px;
-  height: 40px;
+  width: 10vw;
+  height: 10vw;
+  max-width: 80px;
+  min-width: 40px;
+  max-height: 80px;
+  min-height: 40px;
   border: 2px;
   border-radius: 50px;
-  background-color: #DFD4D4;
-  display: inline-block;
+  background-image: url(${logoImg});
+  margin: 10px 0 0 0;
+  float: left;
 `
 
 const Burger = styled.img`
@@ -112,8 +121,8 @@ render(){
   return (
     <Head>
       <Container>
+          <Logo></Logo>
         <Head2>
-          <H1><Logo><center>M</center></Logo>ath</H1>
           <Burger onClick={this.MenuBurger}></Burger>
           <Menu style = {menuStyle}>
             <Btn>Geom</Btn>
