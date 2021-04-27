@@ -40,22 +40,5 @@
   },
   "devDependencies": {
     "react-router-dom": "^5.2.0"
-  },
-  "description": "So this simple app is going to help schoolboys solve simple problems and calculate simple expressions.  \r You can choose formula and input values, after this u can get answer for question!",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/azirb/SNH-app.git"
-  },
-  "keywords": [
-    "formelas",
-    "calc",
-    "react"
-  ],
-  "author": "rstp,igor",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/azirb/SNH-app/issues"
-  },
-  "homepage": "https://github.com/azirb/SNH-app#readme"
+  }
 }
