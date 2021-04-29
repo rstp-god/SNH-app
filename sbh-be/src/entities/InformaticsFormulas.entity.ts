@@ -15,4 +15,7 @@ export class InfoFormula {
 
     @Column()
     description : string; 
+    
+    @Column()
+    LaTeXformula: string; 
 }

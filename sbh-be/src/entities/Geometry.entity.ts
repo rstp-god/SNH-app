@@ -15,4 +15,7 @@ export class Geometry {
 
     @Column()
     description : string; 
+
+    @Column()
+    LaTeXformula: string; 
 }

@@ -27,7 +27,6 @@ const FormulaContainer= styled.div`
 
 const CalculatorContaner= styled.div`
     display: flex; 
-    flex-direction:column;
     width: 100%; 
     padding: 10px; 
     box-sizing: border-box; 
@@ -37,8 +36,11 @@ const CalculatorContaner= styled.div`
 
 const Answer= styled.div`
     width: 50%; 
-    box-sizing: border-box; 
+    display : flex; 
+    align-items: center; 
+    flex-direction : column; 
     margin: 0 auto; 
+    box-sizing: border-box; 
 `
 
 const InputContainer=styled.div`
@@ -111,13 +113,16 @@ export default class Inspect extends Component {
                  </MathJax.Provider>
              </FormulaContainer>
              <CalculatorContaner>
-                 <h1>Calculate!</h1>
                 <InputContainer>
+                <h1>Calculate!</h1>
                 <InputCalc/>
                 <InputCalc/>
                 <InputCalc/>
                 </InputContainer>
-                <Answer/>
+                <Answer>
+                    <h1>Answer!</h1>
+                    <h1>42</h1>
+                </Answer>
              </CalculatorContaner>
              <Description>
                     <h1>Description</h1>
