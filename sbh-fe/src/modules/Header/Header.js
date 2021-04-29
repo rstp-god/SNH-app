@@ -62,7 +62,7 @@ const Burger = styled.img`
   width: calc(20px + (40 - 20) * ((100vw - 280px) / (760 - 280)));
   height: calc(20px + (40 - 20) * ((100vw - 280px) / (760 - 280)));
   float: right;
-  margin: 0;
+  margin: calc(15px + (0 - 15) * ((100vw - 280px) / (760 - 280))) 0;
   border-radius:5px;
   background-image: url(${window.location.origin + "/img/Burger.png"});
   &:hover{
