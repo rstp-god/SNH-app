@@ -16,13 +16,15 @@ const NavContainer=styled.div`
     width: 100%; 
     box-sizing: border-box; 
     margin: 0 auto; 
-    border: 1px solid black;    
+    border: 2px solid black;
+    border-radius: 45px;    
 `
 const FormulaContainer= styled.div`
     width: 100%; 
     box-sizing: border-box; 
     margin: 2% auto; 
-    border: 1px solid black; 
+    border: 2px solid black;
+    border-radius: 45px; 
 `
 
 const CalculatorContaner= styled.div`
@@ -31,7 +33,8 @@ const CalculatorContaner= styled.div`
     padding: 10px; 
     box-sizing: border-box; 
     margin: 2% auto; 
-    border: 1px solid black; 
+    border: 2px solid black;
+    border-radius: 45px; 
 `
 
 const Answer= styled.div`
@@ -62,19 +65,34 @@ const Description=styled.div`
     box-sizing: border-box; 
     padding: 10px;
     margin: 2% auto; 
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 45px; 
 `
 
 const VideoContainer= styled.div`
     width: 100%; 
+    display : flex; 
+    flex-direction: column; 
+    align-content: center; 
+    box-sizing: border-box; 
+    margin: 2% auto; 
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 45px; 
+`
+
+const GraphicsContainer= styled.div`
+    width: 100%; 
     box-sizing: border-box; 
     margin: 2% auto; 
     padding: 10px;
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 45px; 
 `
 
 const Video =styled.iframe`
-    width: 100%; 
+    width: 99%; 
+    box-sizing: border-box;
     margin: 0 auto; 
     height: 600px;
 
@@ -134,6 +152,9 @@ export default class Inspect extends Component {
                 <h1>Checkout this!</h1>
                 <Video src={VideoUrl}  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>
              </VideoContainer>
+             <GraphicsContainer>
+                 <h1>Check this on Decard plot!</h1>
+             </GraphicsContainer>
         </Container>
         ) 
     }
