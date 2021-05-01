@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import MathJax from 'mathjax3-react';
+import functionPlot from "function-plot";
+
 
 const Container = styled.div`
     display : flex; 
@@ -16,28 +18,34 @@ const NavContainer=styled.div`
     width: 100%; 
     box-sizing: border-box; 
     margin: 0 auto; 
-    border: 1px solid black;    
+    border: 2px solid black;
+    border-radius: 45px;    
 `
 const FormulaContainer= styled.div`
     width: 100%; 
     box-sizing: border-box; 
     margin: 2% auto; 
-    border: 1px solid black; 
+    border: 2px solid black;
+    border-radius: 45px; 
 `
 
 const CalculatorContaner= styled.div`
     display: flex; 
-    flex-direction:column;
     width: 100%; 
+    padding: 10px; 
     box-sizing: border-box; 
     margin: 2% auto; 
-    border: 1px solid black; 
+    border: 2px solid black;
+    border-radius: 45px; 
 `
 
 const Answer= styled.div`
     width: 50%; 
-    box-sizing: border-box; 
+    display : flex; 
+    align-items: center; 
+    flex-direction : column; 
     margin: 0 auto; 
+    box-sizing: border-box; 
 `
 
 const InputContainer=styled.div`
@@ -57,14 +65,83 @@ const Description=styled.div`
     width: 100%; 
     font-size:15px;
     box-sizing: border-box; 
-    margin: 0 auto; 
-    border: 1px solid black;
+    padding: 10px;
+    margin: 2% auto; 
+    border: 2px solid black;
+    border-radius: 45px; 
 `
 
-const test = "$$\\frac{\\int_{-\\infty}^{+\\infty}ydx}{\\sum \\alpha \\beta +\\int x^2dx}$$"; 
+const VideoContainer= styled.div`
+    width: 100%; 
+    display : flex; 
+    flex-direction: column; 
+    align-content: center; 
+    box-sizing: border-box; 
+    margin: 2% auto; 
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 45px; 
+`
+
+const GraphicsContainer= styled.div`
+    width: 100%; 
+    box-sizing: border-box; 
+    margin: 2% auto; 
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 45px; 
+`
+
+const Video =styled.iframe`
+    width: 99%; 
+    box-sizing: border-box;
+    margin: 0 auto; 
+    height: 600px;
+
+@media (max-width: 1200px) {
+    height: 500px;
+}
+
+@media (max-width: 500px) {
+    height: 350px;
+}
+@media (max-width: 350px) {
+    height: 280px;
+}
+`
+
+const LaTeXFormula = "$$\\frac{\\int_{-\\infty}^{+\\infty}ydx}{\\sum \\alpha \\beta +\\int x^2dx}$$"; 
+const VideoUrl = "https://www.youtube.com/embed/u_pnia4Xhlw";
 
 
 export default class Inspect extends Component {
+
+    constructor(props){
+        super(props);     
+    }
+
+
+    
+    componentDidMount() {
+        functionPlot({
+            target: "#rootgraph",
+            width: 800,
+            height: 500,
+            yAxis: { domain: [-1, 9] },
+            grid: true,
+            data: [
+              {
+                fn: "x^2",
+                derivative: {
+                  fn: "2 * x",
+                  updateOnMouseMove: true
+                }
+              }
+            ]
+          });
+    }
+
+
 
     render() {
         return ( 
@@ -74,16 +151,20 @@ export default class Inspect extends Component {
              </NavContainer>
              <FormulaContainer>
                  <MathJax.Provider>
-                    <MathJax.Formula formula={test}/> 
+                    <MathJax.Formula formula={LaTeXFormula}/> 
                  </MathJax.Provider>
              </FormulaContainer>
              <CalculatorContaner>
-                 <h1>Calculate!</h1>
                 <InputContainer>
+                <h1>Calculate!</h1>
                 <InputCalc/>
                 <InputCalc/>
                 <InputCalc/>
                 </InputContainer>
+                <Answer>
+                    <h1>Answer!</h1>
+                    <h1>42</h1>
+                </Answer>
              </CalculatorContaner>
              <Description>
                     <h1>Description</h1>
@@ -91,6 +172,13 @@ export default class Inspect extends Component {
              <br/>  
              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan metus in mollis euismod. Nunc finibus tincidunt odio, et porta dolor dapibus sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam vitae ante ultrices, placerat purus id, lacinia nulla. Morbi mattis ex non scelerisque pulvinar. In hac habitasse platea dictumst. Nullam sagittis elit ligula, nec suscipit odio sagittis et.
              </Description>
+             <VideoContainer> 
+                <h1>Checkout this!</h1>
+                <Video src={VideoUrl}  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>
+             </VideoContainer>
+             <GraphicsContainer id='rootgraph'>
+                 <h1>Check this on Decard plot!</h1>
+             </GraphicsContainer>
         </Container>
         ) 
     }

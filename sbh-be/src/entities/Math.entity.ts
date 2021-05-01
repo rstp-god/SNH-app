@@ -15,4 +15,7 @@ export class Math {
 
     @Column()
     description : string; 
+
+    @Column()
+    LaTeXformula: string; 
 }
