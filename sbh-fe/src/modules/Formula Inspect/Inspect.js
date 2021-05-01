@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import MathJax from 'mathjax3-react';
+import functionPlot from "function-plot";
+
 
 const Container = styled.div`
     display : flex; 
@@ -115,9 +117,31 @@ const VideoUrl = "https://www.youtube.com/embed/u_pnia4Xhlw";
 export default class Inspect extends Component {
 
     constructor(props){
-        super(props); 
-        
+        super(props);     
     }
+
+
+    
+    componentDidMount() {
+        functionPlot({
+            target: "#rootgraph",
+            width: 800,
+            height: 500,
+            yAxis: { domain: [-1, 9] },
+            grid: true,
+            data: [
+              {
+                fn: "x^2",
+                derivative: {
+                  fn: "2 * x",
+                  updateOnMouseMove: true
+                }
+              }
+            ]
+          });
+    }
+
+
 
     render() {
         return ( 
@@ -152,7 +176,7 @@ export default class Inspect extends Component {
                 <h1>Checkout this!</h1>
                 <Video src={VideoUrl}  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>
              </VideoContainer>
-             <GraphicsContainer>
+             <GraphicsContainer id='rootgraph'>
                  <h1>Check this on Decard plot!</h1>
              </GraphicsContainer>
         </Container>

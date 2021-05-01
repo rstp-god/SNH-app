@@ -13,6 +13,10 @@ import Geometry from "./modules/Geometry/Geometry";
 import Inform from "./modules/Inform/Inform";
 
 
+
+
+
+
 const Wrapper = styled.div`
   width: 100%; 
   box-sizing : border-box; 

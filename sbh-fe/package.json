@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "function-plot": "^1.22.7",
     "http-server": "^0.12.3",
     "mathjax3-react": "^1.0.11",
     "react": "^17.0.2",
