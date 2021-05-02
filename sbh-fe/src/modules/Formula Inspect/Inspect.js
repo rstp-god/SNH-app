@@ -110,6 +110,13 @@ const Video =styled.iframe`
 }
 `
 
+const Graph = styled.div`
+    width: 100%; 
+    height: {this.GraphWidth.current.offsetWidth*0.5}; 
+    box-sizing: border-box; 
+    margin: 0 auto; 
+`
+
 const LaTeXFormula = "$$\\frac{\\int_{-\\infty}^{+\\infty}ydx}{\\sum \\alpha \\beta +\\int x^2dx}$$"; 
 const VideoUrl = "https://www.youtube.com/embed/u_pnia4Xhlw";
 
@@ -117,7 +124,8 @@ const VideoUrl = "https://www.youtube.com/embed/u_pnia4Xhlw";
 export default class Inspect extends Component {
 
     constructor(props){
-        super(props);     
+        super(props); 
+        this.GraphWidth = React.createRef();    
     }
 
 
@@ -125,13 +133,13 @@ export default class Inspect extends Component {
     componentDidMount() {
         functionPlot({
             target: "#rootgraph",
-            width: 800,
-            height: 500,
-            yAxis: { domain: [-1, 9] },
+            width: this.GraphWidth.current.offsetWidth-15,
+            height: this.GraphWidth.current.offsetWidth*0.5, 
+            yAxis: { domain: [-20, 20] },
             grid: true,
             data: [
               {
-                fn: "x^2",
+                fn: "x^3",
                 derivative: {
                   fn: "2 * x",
                   updateOnMouseMove: true
@@ -140,8 +148,6 @@ export default class Inspect extends Component {
             ]
           });
     }
-
-
 
     render() {
         return ( 
@@ -176,8 +182,9 @@ export default class Inspect extends Component {
                 <h1>Checkout this!</h1>
                 <Video src={VideoUrl}  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>
              </VideoContainer>
-             <GraphicsContainer id='rootgraph'>
+             <GraphicsContainer>
                  <h1>Check this on Decard plot!</h1>
+                 <Graph ref={this.GraphWidth} id='rootgraph'/>
              </GraphicsContainer>
         </Container>
         ) 
