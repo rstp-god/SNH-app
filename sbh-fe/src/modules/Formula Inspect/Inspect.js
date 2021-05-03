@@ -37,6 +37,9 @@ const CalculatorContaner= styled.div`
     margin: 2% auto; 
     border: 2px solid black;
     border-radius: 45px; 
+    @media(max-width: 320px) {
+        flex-direction: column; 
+    }
 `
 
 const Answer= styled.div`
@@ -53,6 +56,7 @@ const InputContainer=styled.div`
     flex-direction: column; 
     align-items: center; 
     width: 50%; 
+    margin: 0 auto; 
 `
 
 const InputCalc =styled.input`
@@ -92,6 +96,15 @@ const GraphicsContainer= styled.div`
     border-radius: 45px; 
 `
 
+const Calc= styled.button`
+    width: 100%;  
+    box-sizing: border-box; 
+    border: 2px solid black; 
+    border-radius: 40px; 
+    margin-top: 2%; 
+    background-color: transparent;
+`
+
 const Video =styled.iframe`
     width: 99%; 
     box-sizing: border-box;
@@ -112,7 +125,6 @@ const Video =styled.iframe`
 
 const Graph = styled.div`
     width: 100%; 
-    height: {this.GraphWidth.current.offsetWidth*0.5}; 
     box-sizing: border-box; 
     margin: 0 auto; 
 `
@@ -166,12 +178,17 @@ export default class Inspect extends Component {
                 <InputCalc/>
                 <InputCalc/>
                 <InputCalc/>
+                <Calc>Calc!</Calc>
                 </InputContainer>
                 <Answer>
                     <h1>Answer!</h1>
                     <h1>42</h1>
                 </Answer>
              </CalculatorContaner>
+             <GraphicsContainer>
+                 <h1>Check this on Decard plot!</h1>
+                 <Graph ref={this.GraphWidth} id='rootgraph'/>
+             </GraphicsContainer>
              <Description>
                     <h1>Description</h1>
              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas nibh at odio aliquet tincidunt. Curabitur at dui augue. Fusce scelerisque eu ipsum at mollis. Nullam in erat felis. Sed lobortis nibh neque, eu luctus sapien tristique tristique. Morbi vitae vehicula dui, id sagittis dolor. Aenean accumsan dictum nulla at consequat. Aenean malesuada tortor ligula, at pulvinar nunc laoreet eu. Nunc auctor, dolor eget iaculis facilisis, purus lectus molestie quam, in bibendum nisi velit at nisi.
@@ -182,10 +199,6 @@ export default class Inspect extends Component {
                 <h1>Checkout this!</h1>
                 <Video src={VideoUrl}  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen/>
              </VideoContainer>
-             <GraphicsContainer>
-                 <h1>Check this on Decard plot!</h1>
-                 <Graph ref={this.GraphWidth} id='rootgraph'/>
-             </GraphicsContainer>
         </Container>
         ) 
     }
