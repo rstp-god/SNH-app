@@ -7,11 +7,18 @@ const Container = styled.div`
   box-sizing: border-box;
 `
 
+const Footer = styled.footer'
+  widht:100%;
+  padding: calc(0px + (30 - 0));
+'
+
 class Footer extends React.Component{
 render(){
 
   return (
-      
+      <Footer>
+
+      </Footer>
   )
 }}
 
