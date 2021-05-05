@@ -3,6 +3,8 @@ import styled from "styled-components";
 //import burgerImg from "./../../img/Burger.png"
 //import hburgerImg from "./../../img/hBurger.png"
 import logoImg from "./../../img/logo.png"
+import {Link} from 'react-router-dom'; 
+
 
 
 const Container = styled.div`
@@ -136,10 +138,10 @@ render(){
         <Head2>
           <Burger onClick={this.MenuBurger}></Burger>
           <Menu>
-            <Btn>Geom</Btn>
-            <Btn>Algebra</Btn>
-            <Btn>Physics</Btn>
-            <Btn>Inform</Btn>
+            <Link to='/geom'><Btn>Geom</Btn></Link>
+            <Link to='/math'><Btn>Algebra</Btn></Link>
+            <Link to='/physics'><Btn>Physics</Btn></Link>
+            <Link to='/informatics'><Btn>Inform</Btn></Link>
         </Menu>
       </Head2>
       </Container>

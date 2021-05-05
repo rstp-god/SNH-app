@@ -46,6 +46,7 @@ const Answer= styled.div`
     width: 50%; 
     display : flex; 
     align-items: center; 
+    align-content: center; 
     flex-direction : column; 
     margin: 0 auto; 
     box-sizing: border-box; 
@@ -55,6 +56,7 @@ const InputContainer=styled.div`
     display: flex; 
     flex-direction: column; 
     align-items: center; 
+    height: 250px; 
     width: 50%; 
     margin: 0 auto; 
 `
@@ -62,7 +64,7 @@ const InputContainer=styled.div`
 const InputCalc =styled.input`
     width: 100%; 
     box-sizing: border-box; 
-    margin: 0 auto; 
+    margin: 1% auto; 
 `
 
 const Description=styled.div`
@@ -103,6 +105,12 @@ const Calc= styled.button`
     border-radius: 40px; 
     margin-top: 2%; 
     background-color: transparent;
+    &:hover { 
+        background: #929292;
+        box-shadow: 0 15px 20px #929292;
+        color: white;
+        transform: translateY(-7px);
+    }
 `
 
 const Video =styled.iframe`
@@ -141,7 +149,6 @@ export default class Inspect extends Component {
     }
 
 
-    
     componentDidMount() {
         functionPlot({
             target: "#rootgraph",
@@ -168,16 +175,22 @@ export default class Inspect extends Component {
                  <Link to='/'>Back</Link>
              </NavContainer>
              <FormulaContainer>
-                 <MathJax.Provider>
+                 <MathJax.Provider  
+                    options={{
+                    svg: {
+                    fontCache: 'global'
+                    }
+                }}
+                >
                     <MathJax.Formula formula={LaTeXFormula}/> 
                  </MathJax.Provider>
              </FormulaContainer>
              <CalculatorContaner>
                 <InputContainer>
                 <h1>Calculate!</h1>
-                <InputCalc/>
-                <InputCalc/>
-                <InputCalc/>
+                <InputCalc placeholder='I'/>
+                <InputCalc placeholder='U'/>
+                <InputCalc placeholder='R'/>
                 <Calc>Calc!</Calc>
                 </InputContainer>
                 <Answer>
