@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-//import burgerImg from "./../../img/Burger.png"
-//import hburgerImg from "./../../img/hBurger.png"
 import logoImg from "./../../img/logo.png"
 
 
