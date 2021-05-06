@@ -1,5 +1,5 @@
 import React, { Component } from "react"; 
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import styled from 'styled-components';
 import MathJax from 'mathjax3-react';
 import functionPlot from "function-plot";
@@ -12,6 +12,10 @@ const Container = styled.div`
     box-sizing : border-box; 
     max-width: 1200px;
     margin: 0 auto; 
+    h1 {
+        font-weight: normal; 
+        letter-spacing: 3px; 
+    }
 `
 
 const NavContainer=styled.div`
@@ -141,6 +145,13 @@ const LaTeXFormula = "$$\\frac{\\int_{-\\infty}^{+\\infty}ydx}{\\sum \\alpha \\b
 const VideoUrl = "https://www.youtube.com/embed/u_pnia4Xhlw";
 
 
+function HeaderView() {
+    const location = useLocation();
+    console.log(location.pathname);
+    return <span>Path : {location.pathname}</span>
+  }
+
+  
 export default class Inspect extends Component {
 
     constructor(props){
@@ -173,6 +184,7 @@ export default class Inspect extends Component {
         <Container> 
              <NavContainer>
                  <Link to='/'>Back</Link>
+                 <HeaderView/>
              </NavContainer>
              <FormulaContainer>
                  <MathJax.Provider  
@@ -199,7 +211,7 @@ export default class Inspect extends Component {
                 </Answer>
              </CalculatorContaner>
              <GraphicsContainer>
-                 <h1>Check this on Decard plot!</h1>
+                 <h1>Check this on decard plot!</h1>
                  <Graph ref={this.GraphWidth} id='rootgraph'/>
              </GraphicsContainer>
              <Description>

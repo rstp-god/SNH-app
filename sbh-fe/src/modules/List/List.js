@@ -125,9 +125,9 @@ export default class List extends Component {
                 <SearchLine type='serach' placeholder='Search'/>
                 </LinkContainer>
                 <ListStyled>
-                <ItemList title='Geometry Formula 1'/>
-                <ItemList title='Geometry Formula 2'/>
-                <ItemList title='Geometry Formula 3'/>
+                <ItemList block='geom' title='Geometry Formula 1'/>
+                <ItemList block='geom' title='Geometry Formula 2'/>
+                <ItemList block='geom' title='Geometry Formula 3'/>
                 </ListStyled>
                 </Container>
             )

@@ -43,7 +43,7 @@ export default class ItemList extends Component {
     render () {
         return (
             <Item key={id}>
-            <LinkStyle to={`/inspect/${id}`}> 
+            <LinkStyle to={`${this.props.block}/inspect/${id}`}> 
             {this.props.title}
             </LinkStyle>
             </Item>

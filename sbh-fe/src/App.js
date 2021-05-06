@@ -47,6 +47,7 @@ export default class App extends Component {
       <>
       <Header/>
       <Switch>
+      <Route path='/geom/inspect' component={Inspect}/> 
       <Route path='/math'> 
          <List block='math'></List>
       </Route>
@@ -59,7 +60,6 @@ export default class App extends Component {
       <Route path='/informatics'> 
          <List block='informatic'></List>
       </Route>
-      <Route path='/inspect' component={Inspect}/>
       <Route path='/'>
         <Home/>
       </Route>
