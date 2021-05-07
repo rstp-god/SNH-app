@@ -15,6 +15,7 @@ const Head = styled.header`
   /* width: 100%; */
   height: 100px;
   float: left;
+  z-index: 2;
 `
 
 const Head2 = styled(Container)`
@@ -24,15 +25,6 @@ const Head2 = styled(Container)`
   background-color: #FFF;
   float: left;
   `
-
-// const H1 = styled.h1`
-  // height: 40px;
-  // margin:0;
-  // width: 100px;
-  // float: left;
-  // color: #DFD4D4;
-  // font-size: 25px;
-// `
 
 const Logo = styled.div`
   font-size: 28px;
