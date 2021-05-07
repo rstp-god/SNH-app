@@ -1,5 +1,5 @@
 import React, { Component } from "react"; 
-import {Link, useLocation} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import MathJax from 'mathjax3-react';
 import functionPlot from "function-plot";
@@ -20,6 +20,8 @@ const Container = styled.div`
 
 const NavContainer=styled.div`
     width: 100%; 
+    display: flex ; 
+    justify-content: space-between; 
     box-sizing: border-box; 
     margin: 0 auto; 
     border: 2px solid black;
@@ -144,21 +146,15 @@ const Graph = styled.div`
 const LaTeXFormula = "$$\\frac{\\int_{-\\infty}^{+\\infty}ydx}{\\sum \\alpha \\beta +\\int x^2dx}$$"; 
 const VideoUrl = "https://www.youtube.com/embed/u_pnia4Xhlw";
 
-
-function HeaderView() {
-    const location = useLocation();
-    console.log(location.pathname);
-    return <span>Path : {location.pathname}</span>
-  }
-
-  
 export default class Inspect extends Component {
 
     constructor(props){
         super(props); 
-        this.GraphWidth = React.createRef();    
+        this.GraphWidth = React.createRef();  
+        this.backUrl = window.location.href.slice(0,window.location.href.lastIndexOf('i')-1);
+        this.backUrl = this.backUrl.slice(this.backUrl.lastIndexOf('/'));
+        this.nextUrl = +window.location.href.slice(window.location.href.lastIndexOf('/')+1);
     }
-
 
     componentDidMount() {
         functionPlot({
@@ -169,9 +165,9 @@ export default class Inspect extends Component {
             grid: true,
             data: [
               {
-                fn: "x^3",
+                fn: "x^2+x+2",
                 derivative: {
-                  fn: "2 * x",
+                  fn: "x",
                   updateOnMouseMove: true
                 }
               }
@@ -183,8 +179,8 @@ export default class Inspect extends Component {
         return ( 
         <Container> 
              <NavContainer>
-                 <Link to='/'>Back</Link>
-                 <HeaderView/>
+                 <Link to={`${this.backUrl}`}>Back</Link>
+                 <Link to={`${++this.nextUrl}`}>Next</Link>
              </NavContainer>
              <FormulaContainer>
                  <MathJax.Provider  

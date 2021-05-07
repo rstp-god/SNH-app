@@ -83,9 +83,9 @@ export default class List extends Component {
                 <SearchLine type='serach' placeholder='Search'/>
                 </LinkContainer>
                 <ListStyled>
-                <ItemList title='Informatic Formula 1'/>
-                <ItemList title='Informatic Formula 2'/>
-                <ItemList title='Informatic Formula 3'/>
+                <ItemList block='informatics' title='Informatic Formula 1'/>
+                <ItemList block='informatics' title='Informatic Formula 2'/>
+                <ItemList block='informatics' title='Informatic Formula 3'/>
                 </ListStyled>
                 </Container>
             )   
@@ -97,9 +97,9 @@ export default class List extends Component {
                 <SearchLine type='serach' placeholder='Search'/>
                 </LinkContainer>
                 <ListStyled>
-                <ItemList title='Math Formula 1'/>
-                <ItemList title='Math Formula 2'/>
-                <ItemList title='Math Formula 3'/>
+                <ItemList block='math' title='Math Formula 1'/>
+                <ItemList block='math' title='Math Formula 2'/>
+                <ItemList block='math' title='Math Formula 3'/>
                 </ListStyled>
                 </Container>
             )
@@ -111,9 +111,9 @@ export default class List extends Component {
                 <SearchLine type='serach' placeholder='Search'/>
                 </LinkContainer>
                 <ListStyled>
-                <ItemList title='Physics Formula 1'/>
-                <ItemList title='Physics Formula 2'/>
-                <ItemList title='Physics Formula 3'/>
+                <ItemList block='physics'title='Physics Formula 1'/>
+                <ItemList block='physics'title='Physics Formula 2'/>
+                <ItemList block='physics'title='Physics Formula 3'/>
                 </ListStyled>
                 </Container>
             )
@@ -125,8 +125,8 @@ export default class List extends Component {
                 <SearchLine type='serach' placeholder='Search'/>
                 </LinkContainer>
                 <ListStyled>
-                <ItemList block='geom' title='Geometry Formula 1'/>
                 <ItemList block='geom' title='Geometry Formula 2'/>
+                <ItemList block='geom' title='Geometry Formula 1'/>
                 <ItemList block='geom' title='Geometry Formula 3'/>
                 </ListStyled>
                 </Container>

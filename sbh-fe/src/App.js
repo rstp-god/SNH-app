@@ -48,6 +48,9 @@ export default class App extends Component {
       <Header/>
       <Switch>
       <Route path='/geom/inspect' component={Inspect}/> 
+      <Route path='/math/inspect' component={Inspect}/> 
+      <Route path='/physics/inspect' component={Inspect}/> 
+      <Route path='/informatics/inspect' component={Inspect}/> 
       <Route path='/math'> 
          <List block='math'></List>
       </Route>
