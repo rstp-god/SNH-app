@@ -23,6 +23,11 @@ export class GeometryService {
         return this.infoRepo.findOne(id); 
     }
 
+    create(Geometry: Geometry): Promise<Geometry> {
+        delete Geometry.id; 
+        return this.infoRepo.save(Geometry); 
+    }
+
     delete(id:number) {
         this.infoRepo.delete(id);
     } 

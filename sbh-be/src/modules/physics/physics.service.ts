@@ -23,6 +23,11 @@ export class PhysicsService {
         return this.infoRepo.findOne(id);
     }
 
+    create(Physics: Physics) : Promise<Physics> {
+        delete  Physics.id; 
+        return this.infoRepo.save(Physics); 
+    }
+
     delete(id:number){
         this.infoRepo.delete(id);
     }

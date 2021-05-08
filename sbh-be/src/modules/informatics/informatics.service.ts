@@ -23,6 +23,11 @@ export class InformaticsService {
         return this.infoRepo.findOne(id); 
     }
 
+    create(InfoFormula: InfoFormula): Promise<InfoFormula> {
+        delete InfoFormula.id; 
+        return this.infoRepo.save(InfoFormula); 
+    }
+
     delete(id:number) {
         this.infoRepo.delete(id);
     }

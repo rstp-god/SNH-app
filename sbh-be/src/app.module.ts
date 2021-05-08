@@ -7,6 +7,7 @@ import { GeometryModule } from './modules/Geometry/Geometry.module';
 import { MathModule } from './modules/math/math.module';
 import { PhysicsModule } from './modules/physics/physics.module';
 
+
 @Module({
   imports: [
     TypeOrmModule.forRoot(), 
