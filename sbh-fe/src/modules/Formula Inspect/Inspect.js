@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import MathJax from 'mathjax3-react';
 import functionPlot from "function-plot";
+import MathObj from '../../calculations/MathFuncs'; 
 
 
 const Container = styled.div`
@@ -203,7 +204,7 @@ export default class Inspect extends Component {
                 </InputContainer>
                 <Answer>
                     <h1>Answer!</h1>
-                    <h1>42</h1>
+                    <h1>{MathObj[0].func(1,2,3)}</h1>
                 </Answer>
              </CalculatorContaner>
              <GraphicsContainer>

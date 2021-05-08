@@ -24,6 +24,11 @@ export class MathService {
         return this.infoRepo.findOne(id);
     }
 
+    create(Math: Math) : Promise<Math> {
+        delete Math.id; 
+        return this.infoRepo.save(Math); 
+    }
+
     delete(id:number){
         this.infoRepo.delete(id);
     }
