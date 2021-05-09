@@ -11,18 +11,16 @@ const Container = styled.div`
   box-sizing: border-box;
 `
 const Head = styled.header`
-  background-color: #FFF;
   /* width: 100%; */
   height: 100px;
   float: left;
-  z-index: 2;
+  position :relative;
 `
 
 const Head2 = styled(Container)`
   margin: 30px 0;
   height: 40px;
   width: calc(240px + (1100 - 240) * ((100vw - 280px) / (1200 - 280)));
-  background-color: #FFF;
   float: left;
   `
 

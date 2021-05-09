@@ -9,39 +9,29 @@ export const CanvasProvider = ({ children }) => {
 
   const prepareCanvas = () => {
     const canvas = canvasRef.current
-    canvas.width = 100;
+    canvas.width = window.innerWidth * 2;
     canvas.height = window.innerHeight * 2;
-    canvas.style.width = `50px`;
+    canvas.style.width = `${window.innerWidth}px`;
     canvas.style.height = `${window.innerHeight}px`;
-    canvas.style.float ="left";
     canvas.style.zIndex = -1;
-    canvas.style.position = "fixed";
+    canvas.style.position = "absolute";
+    canvas.style.top = `0`;
     
     const context = canvas.getContext("2d")
     context.scale(2, 2);
     context.lineCap = "round";
-    context.strokeStyle = "black";
+    context.strokeStyle = "red";
     context.lineWidth = 5;
     contextRef.current = context;
   };
 
-  const startDrawing = ({ nativeEvent }) => {
+  const draw = ({ nativeEvent }) => {
+    // if (!isDrawing) {
+      // return;
+    // }
     const { offsetX, offsetY } = nativeEvent;
     contextRef.current.beginPath();
     contextRef.current.moveTo(offsetX, offsetY);
-    setIsDrawing(true);
-  };
-
-  const finishDrawing = () => {
-    contextRef.current.closePath();
-    setIsDrawing(false);
-  };
-
-  const draw = ({ nativeEvent }) => {
-    if (!isDrawing) {
-      return;
-    }
-    const { offsetX, offsetY } = nativeEvent;
     contextRef.current.lineTo(offsetX, offsetY);
     contextRef.current.stroke();
   };
@@ -59,8 +49,6 @@ export const CanvasProvider = ({ children }) => {
         canvasRef,
         contextRef,
         prepareCanvas,
-        startDrawing,
-        finishDrawing,
         clearCanvas,
         draw,
       }}

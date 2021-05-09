@@ -5,8 +5,6 @@ export function Canvas() {
   const {
     canvasRef,
     prepareCanvas,
-    startDrawing,
-    finishDrawing,
     draw,
   } = useCanvas();
 
@@ -16,8 +14,8 @@ export function Canvas() {
 
   return (
     <canvas
-      onMouseDown={startDrawing}
-      onMouseUp={finishDrawing}
+      // onMouseDown={startDrawing}
+      // onMouseUp={finishDrawing}
       onMouseMove={draw}
       ref={canvasRef}
     />

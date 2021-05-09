@@ -12,7 +12,6 @@ import Physics from "./modules/Physics/Physics";
 import Geometry from "./modules/Geometry/Geometry";
 import Inform from "./modules/Inform/Inform";
 import { Canvas } from "./modules/Paint/Canvas"
-import { ClearCanvasButton } from "./modules/Paint/ClearCanvasButton"
 
 
 
@@ -47,8 +46,6 @@ export default class App extends Component {
     return (
       <Router>
       <>
-      <Canvas/>
-      {/* <ClearCanvasButton/> */}
       <Header/>
       <Switch>
       <Route path='/math'> 
@@ -68,6 +65,7 @@ export default class App extends Component {
         <Home/>
       </Route>
       </Switch>
+      <Canvas/>
       </>
       </Router> 
     )
