@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import MathJax from 'mathjax3-react';
 import functionPlot from "function-plot";
 import MathObj from '../../calculations/MathFuncs'; 
+import MathService from "../../services/MathService";
 
 
 const Container = styled.div`
@@ -151,6 +152,7 @@ export default class Inspect extends Component {
 
     constructor(props){
         super(props); 
+        this.service = new MathService() ; 
         this.GraphWidth = React.createRef();  
         this.backUrl = window.location.href.slice(0,window.location.href.lastIndexOf('i')-1);
         this.backUrl = this.backUrl.slice(this.backUrl.lastIndexOf('/'));
@@ -177,6 +179,7 @@ export default class Inspect extends Component {
     }
 
     render() {
+        this.service.testConnection(); 
         return ( 
         <Container> 
              <NavContainer>

@@ -1,6 +1,7 @@
 export default [
     {
         id: 1, 
+        args: 3, 
         func: sum,
     }
 ]
