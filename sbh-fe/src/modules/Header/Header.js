@@ -12,12 +12,7 @@ const Container = styled.div`
   padding: 0 calc(0px + (15 - 0) * ((100vw - 280px) / (1200 - 280)));
 `
 const Head = styled.header`
-<<<<<<< HEAD
-  background-color: #FFF;
-  width: 100%; 
-=======
   /* width: 100%; */
->>>>>>> 01c1a9be8fe9929cd48f003931981af1f8265e30
   height: 100px;
   float: left;
   position :relative;
@@ -26,22 +21,9 @@ const Head = styled.header`
 const Head2 = styled(Container)`
   margin: 30px auto;
   height: 40px;
-<<<<<<< HEAD
-  background-color: #FFF;
-  float: right;
-  padding: 0;
-  @media (max-width: 760px) {
-    width: calc(210px + (990 - 210) * ((100vw - 280px) / (1200 - 280)));
-  }
-  @media (min-width: 70px){
-    width: calc(210px + (990 - 210) * ((100vw - 280px) / (1200 - 280)));
-  }
-`
-=======
   width: calc(240px + (1100 - 240) * ((100vw - 280px) / (1200 - 280)));
   float: left;
   `
->>>>>>> 01c1a9be8fe9929cd48f003931981af1f8265e30
 
 const Logo = styled.div`
   font-size: 28px;
@@ -91,7 +73,7 @@ const Menu = styled.menu`
   }
 `
 
-const Btn = styled.a`
+const Btn = styled(Link)`
   padding: 5px 0;
   width: 20%; 
   height: 30px;
@@ -138,10 +120,10 @@ render(){
         <Head2>
           <Burger onClick={this.MenuBurger}></Burger>
           <Menu>
-            <Link to='/geom'><Btn>Geom</Btn></Link>
-            <Link to='/math'><Btn>Algebra</Btn></Link>
-            <Link to='/physics'><Btn>Physics</Btn></Link>
-            <Link to='/informatics'><Btn>Inform</Btn></Link>
+            <Btn to='/geom'>Geom</Btn>
+            <Btn to='/math'>Algebra</Btn>
+            <Btn to='/physics'>Physics</Btn>
+            <Btn to='/informatics'>Inform</Btn>
         </Menu>
       </Head2>
       </Container>

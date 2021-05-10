@@ -36,10 +36,6 @@ const id = 1;
 
 export default class ItemList extends Component {
     
-    constructor(props){
-        super(props); 
-    }
-
     render () {
         return (
             <Item key={id}>
