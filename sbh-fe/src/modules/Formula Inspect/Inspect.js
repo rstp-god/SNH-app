@@ -166,6 +166,10 @@ export default class Inspect extends Component {
         args: new Array(MathObj[0].args)
     }
 
+    componentDidUpdate() {
+        ++this.nextUrl; 
+    }
+
     componentDidMount() {
         this.getData(); 
         functionPlot({
@@ -209,7 +213,7 @@ export default class Inspect extends Component {
         <Container> 
              <NavContainer>
                  <Link to={`${this.backUrl}`}>Back</Link>
-                 <Link to={`${++this.nextUrl}`}>Next</Link>
+                 <Link to={`${this.nextUrl}`}>Next</Link>
              </NavContainer>
              <FormulaContainer>
                  <MathJax.Provider  

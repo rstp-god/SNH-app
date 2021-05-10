@@ -29,6 +29,7 @@ export class MathController {
         newInfo.description = CreateFormulaDto.description; 
         newInfo.videourl = CreateFormulaDto.videourl; 
         newInfo.LaTeXformula = CreateFormulaDto.LaTeXformula; 
+        newInfo.PlotFormula  = CreateFormulaDto.PlotFormula; 
         this.MathService.create(newInfo); 
         return new HttpException('Formula information added!', HttpStatus.OK); 
     }
