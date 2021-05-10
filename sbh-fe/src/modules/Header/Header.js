@@ -12,12 +12,7 @@ const Container = styled.div`
   padding: 0 calc(0px + (15 - 0) * ((100vw - 280px) / (1200 - 280)));
 `
 const Head = styled.header`
-<<<<<<< HEAD
-  background-color: #FFF;
-  width: 100%; 
-=======
-  /* width: 100%; */
->>>>>>> 01c1a9be8fe9929cd48f003931981af1f8265e30
+  width: 100%;
   height: 100px;
   float: left;
   position :relative;
@@ -26,7 +21,6 @@ const Head = styled.header`
 const Head2 = styled(Container)`
   margin: 30px auto;
   height: 40px;
-<<<<<<< HEAD
   background-color: #FFF;
   float: right;
   padding: 0;
@@ -37,11 +31,6 @@ const Head2 = styled(Container)`
     width: calc(210px + (990 - 210) * ((100vw - 280px) / (1200 - 280)));
   }
 `
-=======
-  width: calc(240px + (1100 - 240) * ((100vw - 280px) / (1200 - 280)));
-  float: left;
-  `
->>>>>>> 01c1a9be8fe9929cd48f003931981af1f8265e30
 
 const Logo = styled.div`
   font-size: 28px;
