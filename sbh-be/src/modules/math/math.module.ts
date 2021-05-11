@@ -1,7 +1,9 @@
+//node imports
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+//project imports
 import { MathService } from './math.service';
 import { MathController } from './math.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { Math } from 'src/entities/Math.entity';
 
 @Module({

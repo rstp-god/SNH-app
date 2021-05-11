@@ -1,5 +1,8 @@
+//node imports
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
+//project imports 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TestconnectionModule } from './modules/testconnection/testconnection.module';

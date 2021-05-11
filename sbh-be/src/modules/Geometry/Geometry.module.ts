@@ -1,7 +1,9 @@
+//node imports
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+//project imports
 import { GeometryService } from './Geometry.service';
 import { GeometryController } from './Geometry.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { Geometry } from 'src/entities/Geometry.entity';
 
 @Module({
