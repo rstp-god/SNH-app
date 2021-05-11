@@ -232,7 +232,7 @@ export default class Inspect extends Component {
                 </InputContainer>
                 <Answer>
                     <h1>Answer!</h1>
-                    <h1>{MathObj[0].func(...this.state.args)}</h1>
+                    <h1>{MathObj[0].func(...this.state.args).toString()}</h1>
                     <h1>{test.toString()}</h1>
                 </Answer>
              </CalculatorContaner>

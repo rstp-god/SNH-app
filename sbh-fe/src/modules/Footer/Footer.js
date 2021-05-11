@@ -16,13 +16,7 @@ class Footer extends React.Component{
 render(){
 
   return (
-<<<<<<< HEAD
-      <Footer>
-
-      </Footer>
-=======
     <Container></Container>
->>>>>>> 01c1a9be8fe9929cd48f003931981af1f8265e30
   )
 }}
 

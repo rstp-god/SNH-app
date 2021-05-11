@@ -27,7 +27,7 @@ const Head2 = styled(Container)`
   @media (max-width: 760px) {
     width: calc(210px + (990 - 210) * ((100vw - 280px) / (1200 - 280)));
   }
-  @media (min-width: 70px){
+  @media (min-width: 760px){
     width: calc(210px + (990 - 210) * ((100vw - 280px) / (1200 - 280)));
   }
 `
@@ -80,7 +80,7 @@ const Menu = styled.menu`
   }
 `
 
-const Btn = styled.a`
+const Btn = styled(Link)`
   padding: 5px 0;
   width: 20%; 
   height: 30px;
@@ -127,10 +127,10 @@ render(){
         <Head2>
           <Burger onClick={this.MenuBurger}></Burger>
           <Menu>
-            <Link to='/geom'><Btn>Geom</Btn></Link>
-            <Link to='/math'><Btn>Algebra</Btn></Link>
-            <Link to='/physics'><Btn>Physics</Btn></Link>
-            <Link to='/informatics'><Btn>Inform</Btn></Link>
+            <Btn to='/geom'>Geom</Btn>
+            <Btn to='/math'>Algebra</Btn>
+            <Btn to='/physics'>Physics</Btn>
+            <Btn to='/informatics'>Inform</Btn>
         </Menu>
       </Head2>
       </Container>
