@@ -14,4 +14,17 @@ export default class MathService {
         return await result;
     }
 
+    getMathFormulas = async () => {
+        const result =  await fetch(`${this._apibaseURL}/Math`, {
+            method: 'GET', 
+            mode:'cors'
+        })
+        .then((res)=> {
+            return res.json().then((data) => {
+                return data; 
+            })
+        }) 
+        return await result;
+    }
+
 }

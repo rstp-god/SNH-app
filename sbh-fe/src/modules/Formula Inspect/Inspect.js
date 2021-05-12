@@ -163,7 +163,8 @@ export default class Inspect extends Component {
     state ={
         formula : '', 
         loading : true,
-        args: new Array(MathObj[0].args)
+        args: new Array(MathObj[0].args), 
+        formulas: []
     }
 
     componentDidUpdate() {
