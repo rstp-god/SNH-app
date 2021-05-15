@@ -66,4 +66,55 @@ export default class ApiService {
         return await result; 
     }
 
+    getPhysicsFormulas = async () => { 
+        const result = await fetch(`${this._apibaseURL}/Physics`, {
+            method : 'GET', 
+            mode :'cors'
+        })
+        .then((res)=> { 
+            return res.json().then((data)=> { 
+                return data; 
+            })
+        })
+        return await result; 
+    }
+
+    getPhysicsFormula = async (id) => { 
+        const result = await fetch(`${this._apibaseURL}/Physics/${id}`, {
+            method : 'GET', 
+            mode :'cors'
+        })
+        .then((res)=> { 
+            return res.json().then((data)=> { 
+                return data; 
+            })
+        })
+        return await result; 
+    }
+
+    getInformFormulas = async () => { 
+        const result = await fetch(`${this._apibaseURL}/Informatics`, { 
+            method: 'GET', 
+            mode :'cors'
+        })
+        .then((res)=> { 
+            return res.json().then((data)=> { 
+                return data; 
+            })
+        })
+        return await result; 
+    }
+    
+    getInformFormula = async (id) => { 
+        const result = await fetch(`${this._apibaseURL}/Informatics/${id}`, { 
+            method: 'GET', 
+            mode :'cors'
+        })
+        .then((res)=> { 
+            return res.json().then((data)=> { 
+                return data; 
+            })
+        })
+        return await result; 
+    }
 }
