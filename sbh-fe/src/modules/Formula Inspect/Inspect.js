@@ -158,21 +158,20 @@ export default class Inspect extends Component {
         this.backUrl = window.location.href.slice(0,window.location.href.lastIndexOf('i')-1);
         this.backUrl = this.backUrl.slice(this.backUrl.lastIndexOf('/'));
         this.nextUrl = +window.location.href.slice(window.location.href.lastIndexOf('/')+1);
+        this.id = +window.location.href.slice(window.location.href.lastIndexOf('/')+1);
     }
 
     state ={
         formula : '', 
         loading : true,
         args: new Array(MathObj[0].args), 
-        formulas: []
-    }
-
-    componentDidUpdate() {
-        ++this.nextUrl; 
+        formulas: [], 
+        answer : null, 
+        block : null,  
     }
 
     componentDidMount() {
-        this.getData(); 
+    
         functionPlot({
             target: "#rootgraph",
             width: this.GraphWidth.current.offsetWidth-15,
@@ -198,18 +197,14 @@ export default class Inspect extends Component {
         })
     }
 
-    getData = () => {
-        this.service.testConnection()
-        .then(res => {
-            this.setState({
-                formula : res, 
-                loading: false
-            })
+    calc = () => {
+        this.setState({
+            answer: MathObj[0].func(...this.state.args) 
         });
     }
 
     render() { 
-        const test = this.state.loading ? 'wait!' : this.state.formula;  
+        let answ = this.state.answer ?  this.state.answer : 'Calculate something!'; 
         return ( 
         <Container> 
              <NavContainer>
@@ -233,12 +228,11 @@ export default class Inspect extends Component {
                 <InputCalc id='0' placeholder='I' onChange={this.pullArgs}/>
                 <InputCalc id='1' placeholder='U' onChange={this.pullArgs}/>
                 <InputCalc id='2' placeholder='R' onChange={this.pullArgs}/>
-                <Calc>Calc!</Calc>
+                <Calc onClick={this.calc}>Calc!</Calc>
                 </InputContainer>
                 <Answer>
                     <h1>Answer!</h1>
-                    <h1>{MathObj[0].func(...this.state.args).toString()}</h1>
-                    <h1>{test.toString()}</h1>
+                    <h1>{answ}</h1>
                 </Answer>
              </CalculatorContaner>
              <GraphicsContainer>
