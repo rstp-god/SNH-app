@@ -12,6 +12,7 @@ import Physics from "./modules/Physics/Physics";
 import Geometry from "./modules/Geometry/Geometry";
 import Inform from "./modules/Inform/Inform";
 import { Canvas } from "./modules/Paint/Canvas"
+import CookieService from './services/CookieService';
 
 
 
