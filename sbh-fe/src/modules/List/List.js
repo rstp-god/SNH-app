@@ -33,6 +33,7 @@ const SearchLine = styled.input`
     border-radius : 45px;
     border: 1px solid black; 
     outline:none;
+    position: relative;
     ::-webkit-input-placeholder {
     font-family: Playfair Display SC, serif;
     letter-spacing: 2px; 

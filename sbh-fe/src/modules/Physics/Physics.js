@@ -15,6 +15,7 @@ border-radius: 50px;
 -webkit-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
 -moz-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
 box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+    position: relative;
 &:hover { 
     transition: 1s; 
     transform: scale(1.1); 

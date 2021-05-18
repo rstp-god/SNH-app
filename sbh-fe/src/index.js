@@ -2,13 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 // import * as serviceWorker from "./serviceWorker";
-import { CanvasProvider } from "./modules/Paint/CanvasContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <CanvasProvider>
       <App />
-    </CanvasProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
