@@ -1,9 +1,10 @@
-const formulaLoaded = (newFormula,args) => { 
+const formulaLoaded = (newFormula,args,id) => { 
     return {
         type: 'FORMULA_LOADED',
         payload : {
             formula : newFormula, 
-            args
+            args, 
+            id
         }
     }
 }
@@ -25,3 +26,17 @@ const answerLoaded = (answer) =>{
     }
 }
 
+
+const loading = () => { 
+    return { 
+        type: 'LOADING'
+    }
+}
+
+
+export default { 
+    formulaLoaded,
+    formulaListLoaded,
+    answerLoaded,
+    loading
+}

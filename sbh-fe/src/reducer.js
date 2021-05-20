@@ -6,6 +6,7 @@ let InitialState = {
     formula : '', 
     formulas : [], 
     block: null, 
+    id: null, 
     loading : true, 
     args: undefined,
     answer : null  
@@ -52,9 +53,14 @@ const reducer = (state = InitialState, action) => {
                 loading: false
             }
         }
+        case 'LOADING': {
+            return { 
+                ...state, 
+                loading: true
+            }
+        }
     }
 }
-
 
 
 export default reducer; 
