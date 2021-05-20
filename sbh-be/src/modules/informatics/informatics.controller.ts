@@ -28,6 +28,7 @@ export class InformaticsController {
         newInfo.description = CreateFormulaDto.description; 
         newInfo.videourl = CreateFormulaDto.videourl; 
         newInfo.LaTeXformula = CreateFormulaDto.LaTeXformula; 
+        newInfo.PlotFormula  = CreateFormulaDto.PlotFormula; 
         this.InformaticService.create(newInfo);
         return new HttpException('Formula information added!', HttpStatus.OK); 
     }

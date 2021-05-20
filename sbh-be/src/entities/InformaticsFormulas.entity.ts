@@ -13,9 +13,12 @@ export class InfoFormula {
     @Column() 
     videourl: string ;  
 
-    @Column()
+    @Column({ type : "text"})
     description : string; 
     
     @Column()
     LaTeXformula: string; 
+
+    @Column() 
+    PlotFormula: string; 
 }

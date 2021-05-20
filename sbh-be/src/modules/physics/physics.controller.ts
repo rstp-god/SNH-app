@@ -23,6 +23,7 @@ export class PhysicsController {
         newInfo.videourl = CreateFormulaDto.videourl; 
         newInfo.description = CreateFormulaDto.description; 
         newInfo.LaTeXformula = CreateFormulaDto.LaTeXformula; 
+        newInfo.PlotFormula  = CreateFormulaDto.PlotFormula; 
         this.PhysicsService.create(newInfo); 
         return new HttpException('Formula information added!', HttpStatus.OK); 
     }
