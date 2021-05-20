@@ -15,13 +15,11 @@ const Head = styled.header`
   width: 100%;
   height: 100px;
   float: left;
-  position :relative;
 `
 
 const Head2 = styled(Container)`
   margin: 30px auto;
   height: 40px;
-  background-color: #FFF;
   float: right;
   padding: 0;
   @media (max-width: 760px) {
@@ -43,6 +41,7 @@ const Logo = styled.div`
   float: left;
   transition: 0.3s all linear;
   letter-spacing: 3px; 
+  position :relative;
   &:hover{
     width: calc(45px + (85 - 45) * ((100vw - 280px) / (1200 - 280)));
     height: calc(45px + (85 - 45) * ((100vw - 280px) / (1200 - 280)));
@@ -56,6 +55,7 @@ const Burger = styled.img`
   margin: calc(15px + (0 - 15) * ((100vw - 280px) / (760 - 280))) 0;
   border-radius:5px;
   background-image: url(${window.location.origin + "/img/Burger.png"});
+  position :relative;
   &:hover{
     background-image: url(${window.location.origin + "/img/hBurger.png"});
   }
@@ -93,6 +93,7 @@ const Btn = styled(Link)`
   transition: 0.3s all linear;
   letter-spacing: 3px; 
   margin: 0 2%;
+  position :relative;
 &:hover{
     width: 24%; 
     background-color: #DFD4D4;

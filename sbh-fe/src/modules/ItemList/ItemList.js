@@ -18,6 +18,7 @@ const Item=styled.ul`
     box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
     transition: 0.3s all linear;
     letter-spacing: 3px; 
+    position: relative;
     &:hover{ 
         border-left: 10px solid transparent;
         border-right: 10px solid black;
