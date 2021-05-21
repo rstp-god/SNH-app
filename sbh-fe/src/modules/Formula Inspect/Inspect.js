@@ -199,12 +199,13 @@ export default class Inspect extends Component {
 
     calc = () => {
         this.setState({
-            answer: MathObj[0].func(...this.state.args) 
+            answer: MathObj[1].func(...this.state.args) 
         });
     }
 
     render() { 
-        let answ = this.state.answer ?  this.state.answer : 'Calculate something!'; 
+        let answ = this.state.answer ?  this.state.answer : 'Calculate something!';
+        console.log(typeof(answ)) ; 
         return ( 
         <Container> 
              <NavContainer>
