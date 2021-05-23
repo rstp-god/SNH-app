@@ -164,7 +164,7 @@ export default class Inspect extends Component {
     state ={
         formula : '', 
         loading : true,
-        args: new Array(MathObj[0].args), 
+        args: new Array(MathObj['formula1'].args), 
         formulas: [], 
         answer : null, 
         block : null,  
@@ -205,7 +205,6 @@ export default class Inspect extends Component {
 
     render() { 
         let answ = this.state.answer ?  this.state.answer : 'Calculate something!';
-        console.log(typeof(answ)) ; 
         return ( 
         <Container> 
              <NavContainer>

@@ -1,8 +1,9 @@
-const formulaLoaded = (newFormula,args,id) => { 
+const formulaLoaded = (newFormula,args,id,block) => { 
     return {
         type: 'FORMULA_LOADED',
         payload : {
             formula : newFormula, 
+            block, 
             args, 
             id
         }
