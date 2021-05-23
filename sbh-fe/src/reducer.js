@@ -35,6 +35,7 @@ const reducer = (state = InitialState, action) => {
                  ...state, 
                  formula : action.payload.formula,
                  args : action.payload.args, 
+                 block : action.payload.block, 
                  loading : false
              }
         }
