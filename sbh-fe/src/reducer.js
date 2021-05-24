@@ -1,6 +1,6 @@
 import CookieService from './services/CookieService'; 
 
-const cookie = new CookieService; 
+const cookie = new CookieService();
 
 let InitialState = { 
     formula : '', 
@@ -9,7 +9,8 @@ let InitialState = {
     id: null, 
     loading : true, 
     args: undefined,
-    answer : null  
+    answer : null,
+    values: new Array()
 }
 
 if (cookie.getCookiebyName('lastformula') !== undefined || 
@@ -28,21 +29,20 @@ InitialState = {
 }
 }
 
-const reducer = (state = InitialState, action) => { 
-    switch(action) {
+const reducer = (state = InitialState, action) => {
+    switch(action.type) {
         case 'FORMULA_LOADED': {
              return {
-                 ...state, 
+                 ...state,
                  formula : action.payload.formula,
-                 args : action.payload.args, 
-                 block : action.payload.block, 
+                 args : action.payload.args,
                  loading : false
              }
         }
         case 'FORMULA_LIST_LOADED' : {
             return {
                 ...state, 
-                formulas : action.payload.List, 
+                formulas : action.payload.List,
                 block : action.payload.block,
                 loading : false
             }
@@ -60,6 +60,18 @@ const reducer = (state = InitialState, action) => {
                 loading: true
             }
         }
+        case 'INPUT_VALUE' : {
+            console.log(state);
+            return {
+                ...state,
+                values: [
+                    ...state.values,
+                    action.payload.value
+                ]
+            }
+        }
+        default:
+            return state;
     }
 }
 

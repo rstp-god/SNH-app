@@ -1,11 +1,11 @@
-const formulaLoaded = (newFormula,args,id,block) => { 
+const formulaLoaded = (newFormula,args,id) => {
+    console.log(newFormula,args,id);
     return {
         type: 'FORMULA_LOADED',
         payload : {
-            formula : newFormula, 
-            block, 
-            args, 
-            id
+            formula : newFormula,
+            args : args,
+            id : id
         }
     }
 }
@@ -34,10 +34,19 @@ const loading = () => {
     }
 }
 
+const pullValue = (value) => {
+    console.log(value);
+    return {
+        type: 'INPUT_VALUE',
+        payload : value
+    }
+}
 
-export default { 
+
+export {
     formulaLoaded,
     formulaListLoaded,
     answerLoaded,
-    loading
+    loading,
+    pullValue
 }

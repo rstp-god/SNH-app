@@ -1,9 +1,11 @@
 import React, { Component } from "react"; 
 import {Link} from 'react-router-dom';
+import { connect } from "react-redux";
+import { formulaLoaded, answerLoaded, loading, pullValue } from '../../actions/actions';
 import styled from 'styled-components';
 import MathJax from 'mathjax3-react';
 import functionPlot from "function-plot";
-import MathObj from '../../calculations/MathFuncs'; 
+import MathFuncArray from '../../calculations/MathFuncs';
 import ApiService from "../../services/ApiService";
 
 
@@ -149,7 +151,7 @@ const Graph = styled.div`
 const LaTeXFormula = "$$\\frac{\\int_{-\\infty}^{+\\infty}ydx}{\\sum \\alpha \\beta +\\int x^2dx}$$"; 
 const VideoUrl = "https://www.youtube.com/embed/u_pnia4Xhlw";
 
-export default class Inspect extends Component {
+class Inspect extends Component {
 
     constructor(props){
         super(props); 
@@ -161,17 +163,8 @@ export default class Inspect extends Component {
         this.id = +window.location.href.slice(window.location.href.lastIndexOf('/')+1);
     }
 
-    state ={
-        formula : '', 
-        loading : true,
-        args: new Array(MathObj['formula1'].args), 
-        formulas: [], 
-        answer : null, 
-        block : null,  
-    }
-
     componentDidMount() {
-    
+        this.props.formulaLoaded('formula1',MathFuncArray['formula1'].args,MathFuncArray['formula1'].id);
         functionPlot({
             target: "#rootgraph",
             width: this.GraphWidth.current.offsetWidth-15,
@@ -190,21 +183,24 @@ export default class Inspect extends Component {
           });
     }
 
-    pullArgs = (e) => { 
-        this.setState(state => { 
-            state.args[+e.target.id] = +e.target.value; 
-            return state.args; 
-        })
+    pullArgs = (e) => {
+        this.props.pullValue(e.target.value);
     }
 
     calc = () => {
-        this.setState({
-            answer: MathObj[1].func(...this.state.args) 
-        });
+        MathFuncArray[this.props.formula].func(...this.props.values);
     }
 
-    render() { 
-        let answ = this.state.answer ?  this.state.answer : 'Calculate something!';
+    inputsRender = () => {
+        let inputs = [];
+            for (let i=0 ; i<this.props.args ; i++) {
+                inputs.push(<InputCalc id={i} onChange={this.pullArgs}/>) ;
+            }
+        return inputs;
+    }
+
+    render() {
+        console.log(this.props);
         return ( 
         <Container> 
              <NavContainer>
@@ -225,14 +221,12 @@ export default class Inspect extends Component {
              <CalculatorContaner>
                 <InputContainer>
                 <h1>Calculate!</h1>
-                <InputCalc id='0' placeholder='I' onChange={this.pullArgs}/>
-                <InputCalc id='1' placeholder='U' onChange={this.pullArgs}/>
-                <InputCalc id='2' placeholder='R' onChange={this.pullArgs}/>
-                <Calc onClick={this.calc}>Calc!</Calc>
+                    {this.inputsRender()}
+                <Calc>Calc!</Calc>
                 </InputContainer>
                 <Answer>
                     <h1>Answer!</h1>
-                    <h1>{answ}</h1>
+                    <h1>{}</h1>
                 </Answer>
              </CalculatorContaner>
              <GraphicsContainer>
@@ -253,3 +247,23 @@ export default class Inspect extends Component {
         ) 
     }
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+        Answer : state.answer,
+        id : state.id,
+        args : state.args
+    }
+};
+
+const mapDispatchToProps = {
+    formulaLoaded,
+    answerLoaded,
+    loading,
+    pullValue
+};
+
+
+
+export  default  connect(mapStateToProps,mapDispatchToProps)(Inspect);
