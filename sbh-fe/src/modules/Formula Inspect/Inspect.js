@@ -184,7 +184,7 @@ class Inspect extends Component {
     }
 
     pullArgs = (e) => {
-        this.props.pullValue(e.target.value);
+        this.props.pullValue(+e.target.value,e.target.id);
     }
 
     calc = () => {
@@ -194,13 +194,12 @@ class Inspect extends Component {
     inputsRender = () => {
         let inputs = [];
             for (let i=0 ; i<this.props.args ; i++) {
-                inputs.push(<InputCalc id={i} onChange={this.pullArgs}/>) ;
+                inputs.push(<InputCalc key={i} id={i} onChange={this.pullArgs}/>) ;
             }
         return inputs;
     }
 
     render() {
-        console.log(this.props);
         return ( 
         <Container> 
              <NavContainer>
@@ -253,7 +252,8 @@ const mapStateToProps = (state) => {
     return {
         Answer : state.answer,
         id : state.id,
-        args : state.args
+        args : state.args,
+        values : state.values
     }
 };
 

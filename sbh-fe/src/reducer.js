@@ -10,7 +10,7 @@ let InitialState = {
     loading : true, 
     args: undefined,
     answer : null,
-    values: new Array()
+    values : [] 
 }
 
 if (cookie.getCookiebyName('lastformula') !== undefined || 
@@ -61,13 +61,24 @@ const reducer = (state = InitialState, action) => {
             }
         }
         case 'INPUT_VALUE' : {
-            console.log(state);
-            return {
-                ...state,
-                values: [
-                    ...state.values,
-                    action.payload.value
+            if (state.values.length < state.args) {
+                return {
+                    ...state,
+                    values: [
+                        ...state.values,
+                        action.payload.value
+                    ]
+                }
+            } 
+            if(state.values.length = state.args) {   
+            return { 
+                ...state, 
+                values : [
+                    ...state.values.slice(0,action.payload.key),
+                    action.payload.value,
+                    ...state.values.slice(+action.payload.key + 1)
                 ]
+            }
             }
         }
         default:

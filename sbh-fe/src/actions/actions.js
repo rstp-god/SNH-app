@@ -1,5 +1,4 @@
-const formulaLoaded = (newFormula,args,id) => {
-    console.log(newFormula,args,id);
+const formulaLoaded = (newFormula,args,id) => { 
     return {
         type: 'FORMULA_LOADED',
         payload : {
@@ -34,11 +33,13 @@ const loading = () => {
     }
 }
 
-const pullValue = (value) => {
-    console.log(value);
+const pullValue = (value, key) => {
     return {
         type: 'INPUT_VALUE',
-        payload : value
+        payload : {
+            value, 
+            key
+        }
     }
 }
 
