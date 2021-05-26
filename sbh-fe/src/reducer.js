@@ -2,7 +2,7 @@ import CookieService from './services/CookieService';
 
 const cookie = new CookieService();
 
-let InitialState = { 
+let InitialState = {
     formula : '', 
     formulas : [], 
     block: null, 
@@ -10,7 +10,7 @@ let InitialState = {
     loading : true, 
     args: undefined,
     answer : null,
-    values : [] 
+    values : undefined
 }
 
 if (cookie.getCookiebyName('lastformula') !== undefined || 
@@ -36,7 +36,8 @@ const reducer = (state = InitialState, action) => {
                  ...state,
                  formula : action.payload.formula,
                  args : action.payload.args,
-                 loading : false
+                 loading : false,
+                 values : new Array(action.payload.args)
              }
         }
         case 'FORMULA_LIST_LOADED' : {
@@ -47,10 +48,10 @@ const reducer = (state = InitialState, action) => {
                 loading : false
             }
         }
-        case 'ANSWER_LOADED' : { 
+        case 'ANSWER_LOADED' : {
             return { 
                 ...state, 
-                answer : action.payload.answer, 
+                answer : action.payload,
                 loading: false
             }
         }
@@ -61,24 +62,13 @@ const reducer = (state = InitialState, action) => {
             }
         }
         case 'INPUT_VALUE' : {
-            if (state.values.length < state.args) {
-                return {
-                    ...state,
-                    values: [
-                        ...state.values,
-                        action.payload.value
-                    ]
-                }
-            } 
-            if(state.values.length = state.args) {   
             return { 
                 ...state, 
                 values : [
-                    ...state.values.slice(0,action.payload.key),
+                    ...state.values.slice(0,+action.payload.key),
                     action.payload.value,
                     ...state.values.slice(+action.payload.key + 1)
                 ]
-            }
             }
         }
         default:

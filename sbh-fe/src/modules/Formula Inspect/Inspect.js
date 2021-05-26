@@ -188,7 +188,8 @@ class Inspect extends Component {
     }
 
     calc = () => {
-        MathFuncArray[this.props.formula].func(...this.props.values);
+        console.log(MathFuncArray['formula1'].func(...this.props.values));
+       this.props.answerLoaded(MathFuncArray['formula1'].func(...this.props.values));
     }
 
     inputsRender = () => {
@@ -200,6 +201,9 @@ class Inspect extends Component {
     }
 
     render() {
+        let answ = !this.props.Answer ? 'Enter values and press Calc!' : this.props.Answer;
+        console.log(answ);
+        console.log(this.props.formula);
         return ( 
         <Container> 
              <NavContainer>
@@ -221,11 +225,11 @@ class Inspect extends Component {
                 <InputContainer>
                 <h1>Calculate!</h1>
                     {this.inputsRender()}
-                <Calc>Calc!</Calc>
+                <Calc onClick={this.calc}>Calc!</Calc>
                 </InputContainer>
                 <Answer>
                     <h1>Answer!</h1>
-                    <h1>{}</h1>
+                    <h1>{answ}</h1>
                 </Answer>
              </CalculatorContaner>
              <GraphicsContainer>
@@ -253,7 +257,8 @@ const mapStateToProps = (state) => {
         Answer : state.answer,
         id : state.id,
         args : state.args,
-        values : state.values
+        values : state.values,
+        formula : state.formula
     }
 };
 

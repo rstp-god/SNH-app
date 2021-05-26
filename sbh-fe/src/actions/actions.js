@@ -1,4 +1,4 @@
-const formulaLoaded = (newFormula,args,id) => { 
+const formulaLoaded = (newFormula,args,id) => {
     return {
         type: 'FORMULA_LOADED',
         payload : {
@@ -20,6 +20,7 @@ const formulaListLoaded = (List, block) => {
 }
 
 const answerLoaded = (answer) =>{
+    console.log(answer);
     return {
         type: 'ANSWER_LOADED', 
         payload : answer

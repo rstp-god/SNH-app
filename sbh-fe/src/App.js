@@ -29,6 +29,7 @@ const Wrapper = styled.div`
   justify-content : space-between;
   align-items: center; 
 `
+
 function Home() {
   return ( 
   <Wrapper>
