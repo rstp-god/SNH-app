@@ -7,6 +7,7 @@ import MathJax from 'mathjax3-react';
 import functionPlot from "function-plot";
 import MathFuncArray from '../../calculations/MathFuncs';
 import ApiService from "../../services/ApiService";
+import CookieService from '../../services/CookieService'; 
 
 
 
@@ -156,6 +157,7 @@ class Inspect extends Component {
     constructor(props){
         super(props); 
         this.service = new ApiService() ; 
+        this.cookieservice = new CookieService();
         this.GraphWidth = React.createRef();  
         this.backUrl = window.location.href.slice(0,window.location.href.lastIndexOf('i')-1);
         this.backUrl = this.backUrl.slice(this.backUrl.lastIndexOf('/'));
@@ -165,6 +167,7 @@ class Inspect extends Component {
 
     componentDidMount() {
         this.props.formulaLoaded('formula1',MathFuncArray['formula1'].args,MathFuncArray['formula1'].id);
+        this.cookieservice.setCookie('lastformula',this.props.formula); 
         functionPlot({
             target: "#rootgraph",
             width: this.GraphWidth.current.offsetWidth-15,

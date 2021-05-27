@@ -11,7 +11,8 @@ import Math from './modules/Math/Math'
 import Physics from "./modules/Physics/Physics";
 import Geometry from "./modules/Geometry/Geometry";
 import Inform from "./modules/Inform/Inform";
-import CookieService from './services/CookieService';
+import { blockChoised } from './actions/actions';
+import { connect } from "react-redux";
 
 
 
@@ -40,7 +41,11 @@ function Home() {
   </Wrapper> ) 
 }
 
-export default class App extends Component {
+class App extends Component {
+
+  choisedblock = () => { 
+    this.props.blockChoised('math');
+  } 
 
   
   render() {
@@ -54,16 +59,19 @@ export default class App extends Component {
       <Route path='/physics/inspect' component={Inspect}/> 
       <Route path='/informatics/inspect' component={Inspect}/> 
       <Route path='/math'> 
-         <List block='math'></List>
+         <List onClick={this.choisedblock()}></List>
       </Route>
       <Route path='/physics'> 
          <List block='physics'></List>
+         {this.props.blockChoised('physics')}
       </Route>
       <Route path='/geom'> 
          <List block='geom'></List>
+         {this.props.blockChoised('geom')}
       </Route>
       <Route path='/informatics'> 
          <List block='informatic'></List>
+         {this.props.blockChoised('informatic')}
       </Route>
       <Route path='/'>
         <Home/>
@@ -74,3 +82,16 @@ export default class App extends Component {
     )
   }
 }
+
+const mapStateToProps = (state)=> { 
+  return {
+    block: state.block
+  }
+}
+
+const mapDispatchToProps ={
+  blockChoised
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

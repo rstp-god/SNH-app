@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
+import { connect } from 'react-redux'; 
 
 import ItemList from '../ItemList/ItemList'; 
+import { loading, formulaListLoaded} from '../../actions/actions';
 
 const Container = styled.div`
     display : flex; 
@@ -73,9 +75,10 @@ const LinkContainer = styled.div`
 
 
 
-export default class List extends Component {   
+class List extends Component {   
 
     render () {
+        console.log(this.props.block);
         if (this.props.block === 'informatic') {
             return (
                 <Container>
@@ -134,3 +137,18 @@ export default class List extends Component {
         }
     }
 }
+
+const mapStateToProps = (state)=>{
+    return {
+        block : state.block,
+        formulas : state.formulas
+    }
+}
+
+
+const mapDispatchToProps = {
+    formulaListLoaded, 
+    loading
+}
+
+export default  connect(mapStateToProps,mapDispatchToProps)(List);

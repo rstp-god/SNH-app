@@ -9,11 +9,10 @@ const formulaLoaded = (newFormula,args,id) => {
     }
 }
 
-const formulaListLoaded = (List, block) => {
+const formulaListLoaded = (block) => {
     return {
         type: 'FORMULA_LIST_LOADED',
         payload : {
-            List, 
             block
         }
     }
@@ -44,11 +43,19 @@ const pullValue = (value, key) => {
     }
 }
 
+const blockChoised = (block)=>{
+    return {
+        type: 'BLOCK_CHOISED', 
+        payload : block
+    }
+}
+
 
 export {
     formulaLoaded,
     formulaListLoaded,
     answerLoaded,
     loading,
-    pullValue
+    pullValue,
+    blockChoised
 }

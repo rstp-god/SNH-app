@@ -44,7 +44,6 @@ const reducer = (state = InitialState, action) => {
             return {
                 ...state, 
                 formulas : action.payload.List,
-                block : action.payload.block,
                 loading : false
             }
         }
@@ -69,6 +68,12 @@ const reducer = (state = InitialState, action) => {
                     action.payload.value,
                     ...state.values.slice(+action.payload.key + 1)
                 ]
+            }
+        }
+        case 'BLOCK_CHOISED': { 
+            return { 
+                ...state, 
+                block : action.payload
             }
         }
         default:
