@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'; 
 
 import ItemList from '../ItemList/ItemList'; 
-import { loading, formulaListLoaded} from '../../actions/actions';
+import { loading, formulaListLoaded, blockChoised} from '../../actions/actions';
 
 const Container = styled.div`
     display : flex; 
@@ -75,10 +75,13 @@ const LinkContainer = styled.div`
 
 
 
-class List extends Component {   
+class List extends Component {  
+    
+    componentDidMount() { 
+        this.props.blockChoised(this.props.block);
+    }
 
     render () {
-        console.log(this.props.block);
         if (this.props.block === 'informatic') {
             return (
                 <Container>
@@ -140,7 +143,7 @@ class List extends Component {
 
 const mapStateToProps = (state)=>{
     return {
-        block : state.block,
+        stateBlock : state.Stateblock,
         formulas : state.formulas
     }
 }
@@ -148,6 +151,7 @@ const mapStateToProps = (state)=>{
 
 const mapDispatchToProps = {
     formulaListLoaded, 
+    blockChoised,
     loading
 }
 

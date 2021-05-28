@@ -5,7 +5,7 @@ const cookie = new CookieService();
 let InitialState = {
     formula : '', 
     formulas : [], 
-    block: null, 
+    Stateblock: null, 
     id: null, 
     loading : true, 
     args: undefined,
@@ -25,7 +25,7 @@ if (cookie.getCookiebyName('lastblock') !== undefined ||
 cookie.getCookiebyName('lastblock') !=='') {
 InitialState = { 
     ...InitialState,
-    block: cookie.getCookiebyName('lastblock'),
+    Stateblock: cookie.getCookiebyName('lastblock'),
 }
 }
 
@@ -73,7 +73,7 @@ const reducer = (state = InitialState, action) => {
         case 'BLOCK_CHOISED': { 
             return { 
                 ...state, 
-                block : action.payload
+                Stateblock : action.payload
             }
         }
         default:

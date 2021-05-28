@@ -59,19 +59,16 @@ class App extends Component {
       <Route path='/physics/inspect' component={Inspect}/> 
       <Route path='/informatics/inspect' component={Inspect}/> 
       <Route path='/math'> 
-         <List onClick={this.choisedblock()}></List>
+         <List block='math'></List>
       </Route>
       <Route path='/physics'> 
          <List block='physics'></List>
-         {this.props.blockChoised('physics')}
       </Route>
       <Route path='/geom'> 
          <List block='geom'></List>
-         {this.props.blockChoised('geom')}
       </Route>
       <Route path='/informatics'> 
          <List block='informatic'></List>
-         {this.props.blockChoised('informatic')}
       </Route>
       <Route path='/'>
         <Home/>
