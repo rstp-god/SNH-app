@@ -13,6 +13,7 @@ import Geometry from "./modules/Geometry/Geometry";
 import Inform from "./modules/Inform/Inform";
 import { blockChoised } from './actions/actions';
 import { connect } from "react-redux";
+import Error from "./modules/Error/Error";
 
 
 
@@ -57,7 +58,8 @@ class App extends Component {
       <Route path='/geom/inspect' component={Inspect}/> 
       <Route path='/math/inspect' component={Inspect}/> 
       <Route path='/physics/inspect' component={Inspect}/> 
-      <Route path='/informatics/inspect' component={Inspect}/> 
+      <Route path='/informatics/inspect' component={Inspect}/>
+        <Route path='/error' component={Error}/>
       <Route path='/math'> 
          <List block='math'></List>
       </Route>
