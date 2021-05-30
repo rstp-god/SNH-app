@@ -59,7 +59,9 @@ class App extends Component {
       <Route path='/math/inspect' component={Inspect}/> 
       <Route path='/physics/inspect' component={Inspect}/> 
       <Route path='/informatics/inspect' component={Inspect}/>
-        <Route path='/error' component={Error}/>
+        <Route path='/error'>
+          <Error/>
+        </Route>
       <Route path='/math'> 
          <List block='math'></List>
       </Route>
