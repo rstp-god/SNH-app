@@ -33,18 +33,19 @@ const LinkStyle = styled(Link)`
     padding : 0 1em;
 `
 
-const id = 1; 
-
-export default class ItemList extends Component {
+class ItemList extends Component {
     
     render () {
         return (
-            <Item key={id}>
-            <LinkStyle to={`${this.props.block}/inspect/${id}`}> 
+            <Item key={this.props.id}>
+            <LinkStyle to={`${this.props.block}/inspect/${this.props.id}`}>
             {this.props.title}
             </LinkStyle>
             </Item>
         )
     }
-
 }
+
+
+
+export default ItemList;

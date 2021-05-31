@@ -7,7 +7,8 @@ import MathJax from 'mathjax3-react';
 import functionPlot from "function-plot";
 import MathFuncArray from '../../calculations/MathFuncs';
 import ApiService from "../../services/ApiService";
-import CookieService from '../../services/CookieService'; 
+import CookieService from '../../services/CookieService';
+import PhysicsFuncArray from "../../calculations/PhysicsFuncs";
 
 
 
@@ -166,7 +167,16 @@ class Inspect extends Component {
     }
 
     componentDidMount() {
-        this.props.formulaLoaded('formula1',MathFuncArray['formula1'].args,MathFuncArray['formula1'].id);
+        console.log(this.props.block);
+        if (this.props.block === 'physics') {
+           let elem ;
+            PhysicsFuncArray.forEach((value,name) => {
+                if (value.id === this.id) {
+                    this.props.formulaLoaded(name,value.args,value.id);
+                }
+            });
+        }
+        //this.props.formulaLoaded('formula1',MathFuncArray['formula1'].args,MathFuncArray['formula1'].id);
         this.cookieservice.setCookie('lastformula',this.props.formula); 
         functionPlot({
             target: "#rootgraph",
@@ -191,8 +201,15 @@ class Inspect extends Component {
     }
 
     calc = () => {
-        console.log(MathFuncArray['formula1'].func(...this.props.values));
-       this.props.answerLoaded(MathFuncArray['formula1'].func(...this.props.values));
+      /*  console.log(MathFuncArray['formula1'].func(...this.props.values));
+       this.props.answerLoaded(MathFuncArray['formula1'].func(...this.props.values));*/
+        if(this.props.block === 'physics') {
+            PhysicsFuncArray.forEach((value,name) => {
+                if(this.props.formula === name) {
+                    this.props.answerLoaded(value.func(...this.props.values));
+                }
+            })
+        }
     }
 
     inputsRender = () => {
@@ -261,7 +278,8 @@ const mapStateToProps = (state) => {
         id : state.id,
         args : state.args,
         values : state.values,
-        formula : state.formula
+        formula : state.formula,
+        block : state.Stateblock
     }
 };
 
