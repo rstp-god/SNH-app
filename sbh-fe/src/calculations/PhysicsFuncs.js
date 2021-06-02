@@ -50,5 +50,15 @@ PhysicsFuncArray.set('PathAccelerationMoving', {
     func : PathAccelerationMoving
 });
 
+function Wieght(m,g=9.81) {
+    return m*g ;
+}
+
+PhysicsFuncArray.set('Weight', {
+    id : 6,
+    args: 3,
+    func: Wieght
+});
+
 
 export default  PhysicsFuncArray;
