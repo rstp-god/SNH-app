@@ -60,5 +60,16 @@ PhysicsFuncArray.set('Weight', {
     func: Wieght
 });
 
+function LawOfUniversalGravitation(m1,m2,r){
+    const G = 6.67*Math.pow(10,-11);
+    return (G*m1*m2)/Math.pow(r,2);
+}
+
+PhysicsFuncArray.set('LawOfUniversalGravitation', {
+    id : 7,
+    args: 3,
+    func: LawOfUniversalGravitation
+});
+
 
 export default  PhysicsFuncArray;

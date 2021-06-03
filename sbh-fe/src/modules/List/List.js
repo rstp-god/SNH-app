@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import ItemList from '../ItemList/ItemList'; 
 import { loading, formulaListLoaded, blockChoised} from '../../actions/actions';
+import PhysicsFuncArray from "../../calculations/PhysicsFuncs";
 
 const Container = styled.div`
     display : flex; 
@@ -77,8 +78,16 @@ const LinkContainer = styled.div`
 
 class List extends Component {  
     
-    componentDidMount() { 
+    componentDidMount() {
         this.props.blockChoised(this.props.block);
+    }
+
+    PrintList = () => {
+        let arr= [];
+        PhysicsFuncArray.forEach((value,name) => {
+           arr.push(<ItemList block='physics' title={name} key={value.id} id={value.id}/>)
+         })
+        return arr;
     }
 
     render () {
@@ -117,9 +126,7 @@ class List extends Component {
                 <SearchLine type='serach' placeholder='Search'/>
                 </LinkContainer>
                 <ListStyled>
-                <ItemList block='physics'title='Physics Formula 1'/>
-                <ItemList block='physics'title='Physics Formula 2'/>
-                <ItemList block='physics'title='Physics Formula 3'/>
+                    {this.PrintList()}
                 </ListStyled>
                 </Container>
             )

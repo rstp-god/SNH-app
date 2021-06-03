@@ -29,6 +29,7 @@ const Border = styled.div`
         letter-spacing: 2px;
     }
     p { 
+        margin: 0 auto; 
         font-family: 'Lora', serif;
         font-size: 25px;
     }
