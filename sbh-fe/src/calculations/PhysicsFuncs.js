@@ -71,5 +71,16 @@ PhysicsFuncArray.set('LawOfUniversalGravitation', {
     func: LawOfUniversalGravitation
 });
 
+function AccelNearSurface (M,R) {
+    const G = 6.67*Math.pow(10,-11);
+    return (G*M)/Math.pow(R,2);
+}
+
+
+PhysicsFuncArray.set('AccelNearSurface' , { 
+    id: 8, 
+    args: 2, 
+    func : AccelNearSurface
+})
 
 export default  PhysicsFuncArray;
