@@ -9,6 +9,7 @@ import MathFuncArray from '../../calculations/MathFuncs';
 import ApiService from "../../services/ApiService";
 import CookieService from '../../services/CookieService';
 import PhysicsFuncArray from "../../calculations/PhysicsFuncs";
+import GeomFuncArray from "../../calculations/GeomFuncs"; 
 
 
 
@@ -175,6 +176,12 @@ class Inspect extends Component {
                     this.props.formulaLoaded(name,value.args,value.id);
                 }
             });
+        } else if (this.props.block === 'geom') {
+            GeomFuncArray.forEach((value,name) => {
+                if (value.id === this.id) {
+                    this.props.formulaLoaded(name,value.args,value.id);
+                }
+            });
         }
         //this.props.formulaLoaded('formula1',MathFuncArray['formula1'].args,MathFuncArray['formula1'].id);
         this.cookieservice.setCookie('lastformula',this.props.formula); 
@@ -209,11 +216,18 @@ class Inspect extends Component {
                     this.props.answerLoaded(value.func(...this.props.values));
                 }
             })
+        } else if ( this.props.block === 'geom') {
+            GeomFuncArray.forEach((value,name) => {
+                if(this.props.formula === name) {
+                    this.props.answerLoaded(value.func(...this.props.values));
+                }
+            })
         }
     }
 
     inputsRender = () => {
         let inputs = [];
+        console.log(this.props.args);   
             for (let i=0 ; i<this.props.args ; i++) {
                 inputs.push(<InputCalc key={i} id={i} onChange={this.pullArgs}/>) ;
             }

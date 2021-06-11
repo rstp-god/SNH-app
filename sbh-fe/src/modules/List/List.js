@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import ItemList from '../ItemList/ItemList'; 
 import { loading, formulaListLoaded, blockChoised} from '../../actions/actions';
 import PhysicsFuncArray from "../../calculations/PhysicsFuncs";
+import GeomFuncArray from '../../calculations/GeomFuncs';
 
 const Container = styled.div`
     display : flex; 
@@ -84,9 +85,15 @@ class List extends Component {
 
     PrintList = () => {
         let arr= [];
-        PhysicsFuncArray.forEach((value,name) => {
-           arr.push(<ItemList block='physics' title={name} key={value.id} id={value.id}/>)
-         })
+        if (this.props.block === 'physics'){
+            PhysicsFuncArray.forEach((value,name) => {
+                arr.push(<ItemList block='physics' title={name} key={value.id} id={value.id}/>)
+              })
+        } else if (this.props.block === 'geom') {
+            GeomFuncArray.forEach((value,name)=>{
+                arr.push(<ItemList block='geom' title={name} key={value.id} id={value.id}/>)
+            })
+        }
         return arr;
     }
 
@@ -138,9 +145,7 @@ class List extends Component {
                 <SearchLine type='serach' placeholder='Search'/>
                 </LinkContainer>
                 <ListStyled>
-                <ItemList block='geom' title='Geometry Formula 2'/>
-                <ItemList block='geom' title='Geometry Formula 1'/>
-                <ItemList block='geom' title='Geometry Formula 3'/>
+                    {this.PrintList()}
                 </ListStyled>
                 </Container>
             )

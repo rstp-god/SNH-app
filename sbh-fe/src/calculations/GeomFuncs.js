@@ -1,12 +1,12 @@
 let GeomFuncArray = new Map();
 
 function CircleSquare (r) {
-    return (pi*r*r);
+    return (Math.PI*r*r);
 }
 
 GeomFuncArray.set('CircleSquare', {
     id: 1,
-    arg: 1,
+    args: 1,
     func: CircleSquare
 });
 
