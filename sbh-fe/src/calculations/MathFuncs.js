@@ -24,4 +24,14 @@ function evalsquare(a,b,c) {
     return [x1 ,x2]; 
 }
 
+MathFuncArray['formula3']= { 
+    id: 3, 
+    args: 1,
+    func: formula3
+};
+
+function formula3(x) {
+    return x * x;
+};
+
 export default MathFuncArray; 

@@ -234,6 +234,7 @@ class Inspect extends Component {
         return inputs;
     }
 
+
     render() {
         let answ = !this.props.Answer ? 'Enter values and press Calc!' : this.props.Answer;
         console.log(answ);
