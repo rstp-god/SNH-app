@@ -1,10 +1,15 @@
 import React from 'react';
+import Header from "./components/header/Header";
+import {BrowserRouter} from "react-router-dom";
+import {Wrapper} from "./components/styledComponents/styledComponents";
 
 function App() {
   return (
-    <div>
-      <h1>Working out!</h1>
-    </div>
+    <BrowserRouter>
+        <Wrapper>
+            <Header/>
+        </Wrapper>
+    </BrowserRouter>
   );
 }
 

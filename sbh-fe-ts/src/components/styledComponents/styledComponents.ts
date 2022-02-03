@@ -13,12 +13,66 @@ export const Wrapper = styled.div`
   align-items: center;
 `
 
-export const divFlexBox = styled.div`
+export const DivFlexBoxColumn = styled.div`
   display : flex;
   flex-direction : column;
   width : 100% ;
   box-sizing : border-box;
   margin: 0 auto;
+`
+
+export const DivFlexBoxRow = styled.div`
+  display : flex;
+  flex-direction : row;
+  width : 100% ;
+  box-sizing : border-box;
+  justify-content: space-around;
+`
+
+export const HeaderLogo = styled.img`
+  max-width: 60px;
+`
+
+export const HeaderButton = styled.button`
+  padding: .75rem 1.25rem;
+  border-radius: 10rem;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #FFC0CB;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: white;
+    &:before {
+      width: 100%;
+    }
+  }
 `
 
 export const ulStyled = styled.ul`
@@ -65,4 +119,10 @@ export const searchLineContainer = styled.div`
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+`
+
+export const HeaderMainContainer = styled.header`
+  width: 100%;
+  height: 100px;
+  float: left;
 `
