@@ -1,35 +1,38 @@
-import styled from 'styled-components';
-import { Link }  from 'react-router-dom';
+import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 export const Wrapper = styled.div`
+  font-family: 'Playfair Display SC', serif;
   width: 100%;
-  box-sizing : border-box;
+  box-sizing: border-box;
   margin: 0 auto;
   max-width: 1200px;
   height: 1200px;
   display: flex;
   flex-direction: column;
-  justify-content : space-between;
+  justify-content: space-between;
   align-items: center;
 `
 
 export const DivFlexBoxColumn = styled.div`
-  display : flex;
-  flex-direction : column;
-  width : 100% ;
-  box-sizing : border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
   margin: 0 auto;
 `
 
 export const DivFlexBoxRow = styled.div`
-  display : flex;
-  flex-direction : row;
-  width : 100% ;
-  box-sizing : border-box;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
   justify-content: space-around;
 `
 
 export const HeaderLogo = styled.img`
+  width: 100%;
+  height: 100%;
   max-width: 60px;
 `
 
@@ -44,6 +47,7 @@ export const HeaderButton = styled.button`
   position: relative;
   overflow: hidden;
   z-index: 1;
+
   &:after {
     content: '';
     position: absolute;
@@ -55,6 +59,7 @@ export const HeaderButton = styled.button`
     border-radius: 10rem;
     z-index: -2;
   }
+
   &:before {
     content: '';
     position: absolute;
@@ -67,8 +72,10 @@ export const HeaderButton = styled.button`
     border-radius: 10rem;
     z-index: -1;
   }
+
   &:hover {
     color: white;
+
     &:before {
       width: 100%;
     }
@@ -77,15 +84,15 @@ export const HeaderButton = styled.button`
 
 export const ulStyled = styled.ul`
   list-style: none;
-  padding: 0 ;
+  padding: 0;
 `
 
 export const ulInside = styled.ul`
   width: 100%;
-  height : 8%;
+  height: 8%;
   box-sizing: border-box;
-  max-width:1200px;
-  margin-top: 4%!important;
+  max-width: 1200px;
+  margin-top: 4% !important;
   padding: 1em;
   text-decoration: none;
   border-radius: 5px;
@@ -96,21 +103,28 @@ export const ulInside = styled.ul`
   transition: 0.3s all linear;
   letter-spacing: 3px;
   position: relative;
-  &:hover{
+
+  &:hover {
     border-left: 10px solid transparent;
     border-right: 10px solid black;
   }
 `
 
-export const reactRouterLink = styled(Link)`
-  width:10%;
+export const ReactRouterLink = styled(Link)`
+  font-size: 50px;
   color: black;
-  margin: 0 auto;
   text-decoration: none;
-  padding : 0 1em;
+  letter-spacing: 2px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1em;
 `
 
-export const searchLineContainer = styled.div`
+export const ReactRouterLinkSVG = styled(Link)`
+  text-decoration: none;
+`
+
+export const SearchLineContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-content: center;
@@ -124,5 +138,32 @@ export const searchLineContainer = styled.div`
 export const HeaderMainContainer = styled.header`
   width: 100%;
   height: 100px;
-  float: left;
+`
+
+export const MainContainer = styled.div`
+  width: 100%;
+  height: 1200px;
+`
+
+export const SquareContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 5%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 50px;
+  -webkit-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+  -moz-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+  box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+  &:hover {
+    transition: 1s;
+    transform: scale(1.1);
+  }
+`
+
+export const LinkContainer = styled.div`
+  margin: 0 auto;
 `

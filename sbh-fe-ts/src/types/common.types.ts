@@ -22,3 +22,7 @@ export interface State {
     answer:number;
 }
 
+export interface Squares {
+    title: string;
+    toUrl:string;
+}
