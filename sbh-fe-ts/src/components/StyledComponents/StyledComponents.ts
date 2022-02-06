@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 export const Wrapper = styled.div`
   font-family: 'Playfair Display SC', serif;
@@ -82,14 +82,13 @@ export const HeaderButton = styled.button`
   }
 `
 
-export const ulStyled = styled.ul`
+export const UlStyled = styled.ul`
   list-style: none;
   padding: 0;
 `
 
-export const ulInside = styled.ul`
+export const UlInside = styled.ul`
   width: 100%;
-  height: 8%;
   box-sizing: border-box;
   max-width: 1200px;
   margin-top: 4% !important;
@@ -110,7 +109,7 @@ export const ulInside = styled.ul`
   }
 `
 
-export const ReactRouterLink = styled(Link)`
+export const ReactRouterLink = styled(NavLink)`
   font-size: 50px;
   color: black;
   text-decoration: none;
@@ -120,8 +119,18 @@ export const ReactRouterLink = styled(Link)`
   padding: 0 1em;
 `
 
-export const ReactRouterLinkSVG = styled(Link)`
+export const ReactRouterLinkSVG = styled(NavLink)`
   text-decoration: none;
+`
+
+export const UlReactRouterLink = styled(NavLink)`
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+  letter-spacing: 2px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1em;
 `
 
 export const SearchLineContainer = styled.div`
@@ -133,6 +142,41 @@ export const SearchLineContainer = styled.div`
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+`
+
+export const SearchLine = styled.input`
+  box-sizing: border-box;
+  width:100%;
+  height: 35px;
+  padding : 0 1em;
+  border-radius : 45px;
+  border: 1px solid black;
+  outline:none;
+  position: relative;
+  ::-webkit-input-placeholder {
+    font-family: Playfair Display SC, serif;
+    letter-spacing: 2px;
+    text-align: center;
+    color: black;
+  }
+  :-moz-placeholder {
+    color: black;
+    letter-spacing: 2px;
+    font-family: Playfair Display SC, serif;
+    text-align: center;
+  }
+  ::-moz-placeholder {
+    color: black;
+    letter-spacing: 2px;
+    font-family: Playfair Display SC, serif;
+    text-align: center;
+  }
+  :-ms-input-placeholder {
+    letter-spacing: 2px;
+    color: black;
+    font-family: Playfair Display SC, serif;
+    text-align: center;
+  }
 `
 
 export const HeaderMainContainer = styled.header`

@@ -10,7 +10,8 @@ export interface Formula {
     videourl: string,
     description: string,
     LaTeXformula: string,
-    PlotFormula: string
+    PlotFormula: string,
+    section: string,
 }
 
 export interface State {

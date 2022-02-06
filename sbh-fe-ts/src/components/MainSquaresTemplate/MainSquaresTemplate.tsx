@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {Squares} from "../../types/common.types";
-import {LinkContainer, ReactRouterLink, SquareContainer} from "../styledComponents/styledComponents";
+import {LinkContainer, ReactRouterLink, SquareContainer} from "../StyledComponents/StyledComponents";
 
 
 const MainSquaresTemplate: FC<Squares> = (props: Squares) => {

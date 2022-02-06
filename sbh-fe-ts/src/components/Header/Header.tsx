@@ -1,15 +1,8 @@
 import React, {FC} from 'react';
-import {
-    HeaderMainContainer,
-    DivFlexBoxRow,
-    HeaderButton,
-    HeaderLogo,
-    ReactRouterLinkSVG
-} from '../styledComponents/styledComponents'
 import Logo from "../../assets/pictures/logo.svg";
-import {Link} from "react-router-dom";
+import {DivFlexBoxRow, HeaderButton, HeaderLogo, HeaderMainContainer, ReactRouterLinkSVG } from '../StyledComponents/StyledComponents';
 
-const Header: FC= () => {
+const Header: FC = () => {
     return (
         <>
             <HeaderMainContainer>

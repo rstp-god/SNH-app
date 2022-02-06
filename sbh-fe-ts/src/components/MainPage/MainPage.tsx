@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import {DivFlexBoxColumn, MainContainer} from "../styledComponents/styledComponents";
-import MainSquaresTemplate from "../mainSquaresTemplate/mainSquaresTemplate";
+import {DivFlexBoxColumn, MainContainer} from "../StyledComponents/StyledComponents";
+import MainSquaresTemplate from "../MainSquaresTemplate/MainSquaresTemplate";
 import {SquaresTitles} from "../../enums/common.enum";
 import {CategoryRoutesEnum} from "../../enums/routes.enum";
 
