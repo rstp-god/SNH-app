@@ -1,24 +1,25 @@
-import React, {FC} from 'react';
-import {DivFlexBoxColumn, MainContainer} from "../StyledComponents/StyledComponents";
+import React, { FC } from 'react';
+import {
+	DivFlexBoxColumn,
+	MainContainer
+} from "../StyledComponents/StyledComponents.module";
 import MainSquaresTemplate from "../MainSquaresTemplate/MainSquaresTemplate";
-import {SquaresTitles} from "../../enums/common.enum";
-import {CategoryRoutesEnum} from "../../enums/routes.enum";
+import { CATEGORY_ROUTES_MAP } from "../../maps/commonMaps.maps";
 
 const MainPage: FC = () => {
 
-    const SquaresArray: React.ReactChild[] = [];
-    Object.keys(SquaresTitles).forEach((key)=>{
-        // @ts-ignore
-        SquaresArray.push(<MainSquaresTemplate title={SquaresTitles[key]} toUrl={CategoryRoutesEnum[key]}/>);
-    })
+	const SquaresArray: React.ReactChild[] = [];
+	CATEGORY_ROUTES_MAP.forEach((value, key) => {
+		SquaresArray.push(<MainSquaresTemplate title={key} toUrl={value}/>);
+	})
 
-    return (
-        <MainContainer>
-            <DivFlexBoxColumn>
-                {SquaresArray.reverse()}
-            </DivFlexBoxColumn>
-        </MainContainer>
-    );
+	return (
+		<MainContainer>
+			<DivFlexBoxColumn>
+				{SquaresArray}
+			</DivFlexBoxColumn>
+		</MainContainer>
+	);
 };
 
 export default MainPage;

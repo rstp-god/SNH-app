@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import Logo from "../../assets/pictures/logo.svg";
-import {DivFlexBoxRow, HeaderButton, HeaderLogo, HeaderMainContainer, ReactRouterLinkSVG } from '../StyledComponents/StyledComponents';
+import {DivFlexBoxRow, HeaderButton, HeaderLogo, HeaderMainContainer, ReactRouterLinkSVG } from '../StyledComponents/StyledComponents.module';
 
 const Header: FC = () => {
     return (

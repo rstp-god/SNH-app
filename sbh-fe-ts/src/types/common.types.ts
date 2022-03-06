@@ -25,5 +25,5 @@ export interface State {
 
 export interface Squares {
     title: string;
-    toUrl:string;
+    toUrl: string;
 }

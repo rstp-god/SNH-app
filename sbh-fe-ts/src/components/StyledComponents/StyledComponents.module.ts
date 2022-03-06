@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {NavLink} from "react-router-dom";
 
 export const Wrapper = styled.div`
-  font-family: 'Playfair Display SC', serif;
+  font-family: 'Playfair Display SC', serif!important;
   width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
@@ -180,6 +180,7 @@ export const SearchLine = styled.input`
 `
 
 export const HeaderMainContainer = styled.header`
+  font-family: 'Playfair Display SC', serif!important;
   width: 100%;
   height: 100px;
 `

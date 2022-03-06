@@ -1,5 +1,5 @@
 import React from 'react';
-import {ReactRouterLink, UlInside, UlReactRouterLink} from "../StyledComponents/StyledComponents";
+import {ReactRouterLink, UlInside, UlReactRouterLink} from "../StyledComponents/StyledComponents.module";
 import {Formula} from "../../types/common.types";
 import {InspectRoutesEnum} from "../../enums/routes.enum";
 import {BlockNames} from "../../enums/common.enum";
@@ -30,7 +30,7 @@ const ListItemFormula = (props: Formula) => {
 
     return (
         <UlInside key={props.id}>
-        <UlReactRouterLink to={`${route}/${props.id}`}>{props.formulaName}</UlReactRouterLink>
+        <UlReactRouterLink to={`${route}${props.id}`}>{props.formulaName}</UlReactRouterLink>
         </UlInside>
     );
 };

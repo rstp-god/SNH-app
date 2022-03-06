@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {
     DivFlexBoxColumn,
     SearchLine,
-} from '../StyledComponents/StyledComponents';
+} from '../StyledComponents/StyledComponents.module';
 import ListItemFormula from "../ListItemFornula/ListItemFormula";
 
 const ListFormulas: FC = () => {
