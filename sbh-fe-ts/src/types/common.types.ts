@@ -27,3 +27,7 @@ export interface Squares {
     title: string;
     toUrl: string;
 }
+
+export interface MathJaxFormula {
+    formula: string; 
+}

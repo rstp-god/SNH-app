@@ -1,13 +1,18 @@
 import React from 'react';
 import {
 	DivFlexBoxColumn,
-	SquareContainer
+	SquareContainerNoAnimation
 } from "../StyledComponents/StyledComponents.module";
+import MathJaxFormulaDisplay from "./modules/MathJaxFormula/MathJaxFormula";
+
 
 const InspectFormula = () => {
+	const LaTeXFormula = "$$\\frac{\\int_{-\\infty}^{+\\infty}ydx}{\\sum \\alpha \\beta +\\int x^2dx}$$";
 	return (
 		<DivFlexBoxColumn>
-			<SquareContainer></SquareContainer>
+			<SquareContainerNoAnimation>
+				<MathJaxFormulaDisplay formula={LaTeXFormula}/>
+			</SquareContainerNoAnimation>
 		</DivFlexBoxColumn>
 
 	);

@@ -209,6 +209,21 @@ export const SquareContainer = styled.div`
   }
 `
 
+export const SquareContainerNoAnimation = styled.div`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 5%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 50px;
+  -webkit-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+  -moz-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+  box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+`
+
 export const LinkContainer = styled.div`
   margin: 0 auto;
 `
