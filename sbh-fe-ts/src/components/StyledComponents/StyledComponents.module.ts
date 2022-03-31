@@ -227,3 +227,13 @@ export const SquareContainerNoAnimation = styled.div`
 export const LinkContainer = styled.div`
   margin: 0 auto;
 `
+
+export const DivFlexBoxRowCenterContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+`
