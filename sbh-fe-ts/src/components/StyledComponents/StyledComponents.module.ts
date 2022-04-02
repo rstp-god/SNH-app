@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const Wrapper = styled.div`
-  font-family: 'Playfair Display SC', serif!important;
+  font-family: 'Playfair Display SC', serif !important;
   width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
@@ -146,19 +146,21 @@ export const SearchLineContainer = styled.div`
 
 export const SearchLine = styled.input`
   box-sizing: border-box;
-  width:100%;
+  width: 100%;
   height: 35px;
-  padding : 0 1em;
-  border-radius : 45px;
+  padding: 0 1em;
+  border-radius: 45px;
   border: 1px solid black;
-  outline:none;
+  outline: none;
   position: relative;
+
   ::-webkit-input-placeholder {
     font-family: Playfair Display SC, serif;
     letter-spacing: 2px;
     text-align: center;
     color: black;
   }
+
   :-moz-placeholder {
     color: black;
     letter-spacing: 2px;
@@ -180,7 +182,7 @@ export const SearchLine = styled.input`
 `
 
 export const HeaderMainContainer = styled.header`
-  font-family: 'Playfair Display SC', serif!important;
+  font-family: 'Playfair Display SC', serif !important;
   width: 100%;
   height: 100px;
 `
@@ -195,6 +197,7 @@ export const SquareContainer = styled.div`
   justify-content: center;
   align-content: center;
   margin-top: 5%;
+  padding: 2%;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -203,6 +206,7 @@ export const SquareContainer = styled.div`
   -webkit-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
   -moz-box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
   box-shadow: -4px 14px 24px -4px rgba(15, 15, 15, 0.719);
+
   &:hover {
     transition: 1s;
     transform: scale(1.1);
@@ -214,6 +218,7 @@ export const SquareContainerNoAnimation = styled.div`
   justify-content: center;
   align-content: center;
   margin-top: 5%;
+  padding: 2%;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -246,6 +251,40 @@ export const DivFlexBoxColumnCenterContent = styled.div`
   margin: 0 auto;
   justify-content: center;
   align-content: center;
+`
+
+export const HeaderText = styled.h1`
+  letter-spacing: 2px;
+  font-weight: normal;
+`
+export const Graph = styled.div`
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+`
+
+export const TextSpanBlock = styled.p`
+  letter-spacing: 1px;
+  font-weight: lighter;
+  font-size: 18px;
+`
+
+export const Video =styled.iframe`
+    width: 99%; 
+    box-sizing: border-box;
+    margin: 0 auto; 
+    height: 600px;
+
+@media (max-width: 1200px) {
+    height: 500px;
+}
+
+@media (max-width: 500px) {
+    height: 350px;
+}
+@media (max-width: 350px) {
+    height: 280px;
+}
 `
 
 export const InputNumberForCalculation = styled.input`

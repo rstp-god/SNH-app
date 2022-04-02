@@ -4,7 +4,8 @@ import {
 	DivFlexBoxColumnCenterContent,
 	DivFlexBoxRow,
 	DivFlexBoxRowCenterContent,
-	InputNumberForCalculation
+	HeaderText,
+	InputNumberForCalculation,
 } from "../../../StyledComponents/StyledComponents.module";
 import { Dictionary } from "../../../../enums/common.enum";
 import { FormulaObj } from "../../../../types/common.types";
@@ -14,7 +15,7 @@ const CalculationFormula: FC<FormulaObj> = (props: FormulaObj) => {
 		<DivFlexBoxRow>
 			<DivFlexBoxColumn>
 				<DivFlexBoxRowCenterContent>
-					{Dictionary.CALCULATE}
+					<HeaderText>{Dictionary.CALCULATE}</HeaderText>
 				</DivFlexBoxRowCenterContent>
 				<DivFlexBoxColumnCenterContent>
 					{generateInputs(props.args)}
@@ -22,7 +23,7 @@ const CalculationFormula: FC<FormulaObj> = (props: FormulaObj) => {
 			</DivFlexBoxColumn>
 			<DivFlexBoxColumn>
 				<DivFlexBoxRowCenterContent>
-					{Dictionary.ANSWER}
+					<HeaderText>{Dictionary.ANSWER}</HeaderText>
 				</DivFlexBoxRowCenterContent>
 			</DivFlexBoxColumn>
 		</DivFlexBoxRow>
@@ -33,9 +34,7 @@ const CalculationFormula: FC<FormulaObj> = (props: FormulaObj) => {
 function generateInputs(count: number): React.ReactChild[] {
 	const inputs: Array<React.ReactChild> = [];
 	for (let i = 0; i < count; i++) {
-		inputs.push(<>
-			<InputNumberForCalculation key={i} type='text' placeholder={Dictionary.INPUT_PLACEHOLDER}/>
-		</>)
+		inputs.push(<InputNumberForCalculation key={i} type='text' placeholder={Dictionary.INPUT_PLACEHOLDER}/>)
 	}
 	return inputs
 }
