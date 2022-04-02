@@ -1,21 +1,24 @@
 import React, { FC } from 'react';
 import {
 	DivFlexBoxColumn,
+	DivFlexBoxColumnCenterContent,
 	DivFlexBoxRow,
-	DivFlexBoxRowCenterContent
+	DivFlexBoxRowCenterContent,
+	InputNumberForCalculation
 } from "../../../StyledComponents/StyledComponents.module";
 import { Dictionary } from "../../../../enums/common.enum";
 import { FormulaObj } from "../../../../types/common.types";
 
 const CalculationFormula: FC<FormulaObj> = (props: FormulaObj) => {
-	const inputsArray = generateInputs(props.args);
 	return (
 		<DivFlexBoxRow>
 			<DivFlexBoxColumn>
 				<DivFlexBoxRowCenterContent>
 					{Dictionary.CALCULATE}
-					{inputsArray}
 				</DivFlexBoxRowCenterContent>
+				<DivFlexBoxColumnCenterContent>
+					{generateInputs(props.args)}
+				</DivFlexBoxColumnCenterContent>
 			</DivFlexBoxColumn>
 			<DivFlexBoxColumn>
 				<DivFlexBoxRowCenterContent>
@@ -28,9 +31,13 @@ const CalculationFormula: FC<FormulaObj> = (props: FormulaObj) => {
 
 
 function generateInputs(count: number): React.ReactChild[] {
-	return (new Array(count).map(() => {
-		return <input/>
-	}))
+	const inputs: Array<React.ReactChild> = [];
+	for (let i = 0; i < count; i++) {
+		inputs.push(<>
+			<InputNumberForCalculation key={i} type='text' placeholder={Dictionary.INPUT_PLACEHOLDER}/>
+		</>)
+	}
+	return inputs
 }
 
 export default CalculationFormula;

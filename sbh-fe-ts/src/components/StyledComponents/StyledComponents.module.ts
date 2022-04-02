@@ -237,3 +237,40 @@ export const DivFlexBoxRowCenterContent = styled.div`
   justify-content: center;
   align-content: center;
 `
+
+export const DivFlexBoxColumnCenterContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+`
+
+export const InputNumberForCalculation = styled.input`
+  width: 100%;
+  margin-top: 5%;
+  border: 1px solid black;
+  border-radius: 15px;
+  ::-webkit-input-placeholder {
+    letter-spacing: 1px;
+    text-align: center;
+    color: black;
+  }
+  :-moz-placeholder {
+    color: black;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  ::-moz-placeholder {
+    color: black;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  :-ms-input-placeholder {
+    letter-spacing: 1px;
+    color: black;
+    text-align: center;
+  }
+`

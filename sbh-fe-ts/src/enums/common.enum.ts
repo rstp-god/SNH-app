@@ -18,5 +18,6 @@ export enum Dictionary {
     INPUT_VALUES = 'Введи значения и получи результат!',
     DECARD_PLOT = 'Посмотри как это выглядит на плоскости',
     DESCRIPTION = 'Описание формулы!',
-    VIDEO_HEADER = 'Посмотри видос про это!'
+    VIDEO_HEADER = 'Посмотри видос про это!',
+    INPUT_PLACEHOLDER = 'Введи цифру!'
 }
