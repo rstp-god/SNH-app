@@ -82,6 +82,55 @@ export const HeaderButton = styled.button`
   }
 `
 
+export const CalculateButton = styled.button`
+  padding: .75rem 1.25rem;
+  border-radius: 10rem;
+  margin-top: 5%;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #FFC0CB;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: white;
+
+    &:before {
+      width: 100%;
+    }
+  }
+`
+
+
+
 export const UlStyled = styled.ul`
   list-style: none;
   padding: 0;
@@ -167,12 +216,14 @@ export const SearchLine = styled.input`
     font-family: Playfair Display SC, serif;
     text-align: center;
   }
+
   ::-moz-placeholder {
     color: black;
     letter-spacing: 2px;
     font-family: Playfair Display SC, serif;
     text-align: center;
   }
+
   :-ms-input-placeholder {
     letter-spacing: 2px;
     color: black;
@@ -246,7 +297,7 @@ export const DivFlexBoxRowCenterContent = styled.div`
 export const DivFlexBoxColumnCenterContent = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
   justify-content: center;
@@ -257,6 +308,17 @@ export const HeaderText = styled.h1`
   letter-spacing: 2px;
   font-weight: normal;
 `
+
+export const AnswerText = styled.h2`
+  letter-spacing: 2px;
+  font-weight: normal;
+`
+
+export const UnitsText = styled.h5`
+  letter-spacing: 2px;
+  font-weight: normal;
+`
+
 export const Graph = styled.div`
   width: 100%;
   box-sizing: border-box;
@@ -269,22 +331,22 @@ export const TextSpanBlock = styled.p`
   font-size: 18px;
 `
 
-export const Video =styled.iframe`
-    width: 99%; 
-    box-sizing: border-box;
-    margin: 0 auto; 
-    height: 600px;
+export const Video = styled.iframe`
+  width: 99%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  height: 600px;
 
-@media (max-width: 1200px) {
+  @media (max-width: 1200px) {
     height: 500px;
-}
+  }
 
-@media (max-width: 500px) {
+  @media (max-width: 500px) {
     height: 350px;
-}
-@media (max-width: 350px) {
+  }
+  @media (max-width: 350px) {
     height: 280px;
-}
+  }
 `
 
 export const InputNumberForCalculation = styled.input`
@@ -292,21 +354,25 @@ export const InputNumberForCalculation = styled.input`
   margin-top: 5%;
   border: 1px solid black;
   border-radius: 15px;
+
   ::-webkit-input-placeholder {
     letter-spacing: 1px;
     text-align: center;
     color: black;
   }
+
   :-moz-placeholder {
     color: black;
     letter-spacing: 1px;
     text-align: center;
   }
+
   ::-moz-placeholder {
     color: black;
     letter-spacing: 1px;
     text-align: center;
   }
+
   :-ms-input-placeholder {
     letter-spacing: 1px;
     color: black;

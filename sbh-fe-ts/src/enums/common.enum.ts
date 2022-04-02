@@ -19,5 +19,8 @@ export enum Dictionary {
     DECARD_PLOT = 'Посмотри как это выглядит на плоскости',
     DESCRIPTION = 'Описание формулы!',
     VIDEO_HEADER = 'Посмотри видос про это!',
-    INPUT_PLACEHOLDER = 'Введи цифру!'
+    INPUT_PLACEHOLDER = 'Введи цифру!',
+    GET_ANSWER = 'Посчитать',
+    UNITS = 'Твоих единиц измерения',
+    FIELD_ERROR = 'Проверь введенные значения!',
 }

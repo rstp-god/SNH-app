@@ -42,3 +42,11 @@ export interface FormulaDescription {
 export interface FormulaVids {
     url: string;
 }
+
+export interface Answer {
+    displayAnswer: number;
+}
+
+export interface Flag {
+    flag: boolean;
+}
