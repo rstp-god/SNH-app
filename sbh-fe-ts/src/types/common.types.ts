@@ -31,3 +31,14 @@ export interface Squares {
 export interface MathJaxFormula {
     formula: string; 
 }
+export interface PlotFormula {
+    function: string;
+}
+
+export interface FormulaDescription {
+    text: string;
+}
+
+export interface FormulaVids {
+    url: string;
+}

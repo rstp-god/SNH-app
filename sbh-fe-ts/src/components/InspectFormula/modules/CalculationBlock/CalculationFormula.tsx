@@ -2,7 +2,8 @@ import React, { FC } from 'react';
 import {
 	DivFlexBoxColumn,
 	DivFlexBoxRow,
-	DivFlexBoxRowCenterContent
+	DivFlexBoxRowCenterContent,
+	HeaderText
 } from "../../../StyledComponents/StyledComponents.module";
 import { Dictionary } from "../../../../enums/common.enum";
 import { FormulaObj } from "../../../../types/common.types";
@@ -13,13 +14,13 @@ const CalculationFormula: FC<FormulaObj> = (props: FormulaObj) => {
 		<DivFlexBoxRow>
 			<DivFlexBoxColumn>
 				<DivFlexBoxRowCenterContent>
-					{Dictionary.CALCULATE}
+					<HeaderText>{Dictionary.CALCULATE}</HeaderText>
 					{inputsArray}
 				</DivFlexBoxRowCenterContent>
 			</DivFlexBoxColumn>
 			<DivFlexBoxColumn>
 				<DivFlexBoxRowCenterContent>
-					{Dictionary.ANSWER}
+					<HeaderText>{Dictionary.ANSWER}</HeaderText>
 				</DivFlexBoxRowCenterContent>
 			</DivFlexBoxColumn>
 		</DivFlexBoxRow>
