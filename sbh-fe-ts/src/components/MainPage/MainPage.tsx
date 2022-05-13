@@ -1,12 +1,22 @@
-import React, { FC } from 'react';
+import React, {
+	FC,
+	useEffect
+} from 'react';
 import {
 	DivFlexBoxColumn,
 	MainContainer
 } from "../StyledComponents/StyledComponents.module";
 import MainSquaresTemplate from "../MainSquaresTemplate/MainSquaresTemplate";
 import { CATEGORY_ROUTES_MAP } from "../../maps/commonMaps.maps";
+import ApiService from "../../services/api.service";
 
 const MainPage: FC = () => {
+
+	const service = new ApiService();
+
+	useEffect(()=> {
+		service.getMathFormula('1');
+	})
 
 	const SquaresArray: React.ReactChild[] = [];
 	CATEGORY_ROUTES_MAP.forEach((value, key) => {

@@ -15,12 +15,14 @@ export interface Formula {
 }
 
 export interface State {
-    id: string;
+    id?: string;
+    loadedFormula?: FormulaObj,
     formula?: Formula;
     formulas?: Formula[];
-    loading: boolean;
-    args: number[];
-    answer:number;
+    isLoading: boolean;
+    args?: number[];
+    answer?:number;
+    category?: string;
 }
 
 export interface Squares {

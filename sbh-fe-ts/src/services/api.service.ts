@@ -1,7 +1,19 @@
 import {Formula} from "../types/common.types";
 import {ApiRoutesEnum} from "../enums/apiRoutes.enum";
+import { formulaLoaded } from "../store/actions";
+import {
+    Action,
+    Store
+} from "redux";
+import { store } from "../store/store";
 
 export default class ApiService {
+    private store: Store
+
+    constructor() {
+        this.store = store
+    }
+
     public async testConnection(): Promise<boolean> {
         const result = await fetch(ApiRoutesEnum.TEST, {
             method: 'GET',
@@ -28,14 +40,14 @@ export default class ApiService {
         return await result;
     }
 
-    public async getMathFormula(id: string): Promise<Formula> {
+    public async getMathFormula(id: string): Promise<Action> {
         const result = await fetch(ApiRoutesEnum.GET_MATH_FORMULAS_BY_ID + id, {
             method: 'GET',
             mode: 'cors'
         })
             .then((res) => {
                 return res.json().then((data) => {
-                    return data;
+                    return this.store.dispatch(formulaLoaded(data))
                 })
             })
         return await result;
