@@ -1,5 +1,8 @@
 import React, {
+	ChangeEvent,
+	ChangeEventHandler,
 	FC,
+	SyntheticEvent,
 	useState
 } from 'react';
 import {
@@ -19,16 +22,21 @@ import {
 	Flag,
 	FormulaObj
 } from "../../../../types/common.types";
+import { current } from "@reduxjs/toolkit";
 
 const CalculationFormula: FC<FormulaObj> = (props: FormulaObj) => {
-	const inputs = generateInputs(props.args);
-	const [displayAnswer, setAnswer] = useState<Answer>({displayAnswer: 0});
-	const [flag, setFlag] = useState<Flag>({flag: false});
+	const [displayAnswer, setAnswer] = useState<Answer>({ displayAnswer: 0 });
+	const [flag, setFlag] = useState<Flag>({ flag: false });
+	const [values, setValues] = useState<number[]>(new Array(props.args))
 	const answer = () => {
-		setAnswer({displayAnswer: 5})
-		setFlag({flag: true});
+		setAnswer({ displayAnswer: props.func(...values) })
+		setFlag({ flag: true })
 	}
-
+	const inputChange = (event: SyntheticEvent<HTMLInputElement>) => {
+		values[+event.currentTarget.name] = +event.currentTarget.value;
+		setValues(values);
+	}
+	const inputs = generateInputs(props.args, inputChange);
 	return (
 		<DivFlexBoxRow>
 			<DivFlexBoxColumn>
@@ -56,10 +64,11 @@ const CalculationFormula: FC<FormulaObj> = (props: FormulaObj) => {
 };
 
 
-function generateInputs(count: number): React.ReactChild[] {
+function generateInputs(count: number, changeFunc: ChangeEventHandler<HTMLInputElement>): React.ReactChild[] {
 	const inputs: Array<React.ReactChild> = [];
 	for (let i = 0; i < count; i++) {
-		inputs.push(<InputNumberForCalculation key={i} type='text' placeholder={Dictionary.INPUT_PLACEHOLDER}/>)
+		inputs.push(<InputNumberForCalculation key={i} name={'' + i} type='text'
+		                                       placeholder={Dictionary.INPUT_PLACEHOLDER} onChange={changeFunc}/>)
 	}
 	return inputs
 }

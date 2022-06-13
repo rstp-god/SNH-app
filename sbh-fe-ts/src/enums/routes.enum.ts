@@ -1,8 +1,8 @@
 export enum InspectRoutesEnum {
-    MATH = '/math/inspect/:id',
-    GEOMETRY = '/geom/inspect/:id',
-    PHYSICS = '/physics/inspect/:id',
-    INFORMATICS = '/informatics/inspect/:id'
+    MATH = '/math/inspect/',
+    GEOMETRY = '/geom/inspect/',
+    PHYSICS = '/physics/inspect/',
+    INFORMATICS = '/informatics/inspect/'
 }
 
 export enum CategoryRoutesEnum {

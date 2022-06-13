@@ -18,7 +18,7 @@ function App() {
                 <Routes>
                     <Route path={CategoryRoutesEnum.HOME} element={<MainPage/>}/>
                     <Route path={CategoryRoutesEnum.MATH} element={<ListFormulas/>}/>
-                    <Route path={InspectRoutesEnum.MATH} element={<InspectFormula/>}/>
+                    <Route path={`${InspectRoutesEnum.MATH}:id`} element={<InspectFormula/>}/>
                 </Routes>
             </Wrapper>
 

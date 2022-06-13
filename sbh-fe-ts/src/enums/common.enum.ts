@@ -1,6 +1,6 @@
 export enum SquaresTitles {
     INFORMATICS = 'Информатика',
-    MATH = 'Математика',
+    MATH = 'Алгебра',
     GEOMETRY = 'Геометрия',
     PHYSICS = 'Физика'
 }
