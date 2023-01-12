@@ -28,4 +28,6 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         PASSWORD: ${{ secrets.PASSWORD }}
-        script: npm build
+        script: |
+          cd sbh-fe-ts
+          npm build
