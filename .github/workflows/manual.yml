@@ -18,17 +18,5 @@ jobs:
         PORT: ${{ secrets.PORT }}
         PASSWORD: ${{ secrets.PASSWORD }}
       with:
-        source: "./sbh-fe-ts"
+        source: "./sbh-fe-ts/build"
         target: "/var/www/schoolsolver.ru/html"
-
-    - name: Executing remote command
-      uses: appleboy/ssh-action@master
-      with:
-        HOST: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        PASSWORD: ${{ secrets.PASSWORD }}
-        script: |
-          cd /var/www/schoolsolver.ru/html/sbh-fe-ts/
-          npm install
-          npm run build
