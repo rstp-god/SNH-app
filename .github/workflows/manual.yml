@@ -29,5 +29,5 @@ jobs:
         PORT: ${{ secrets.PORT }}
         PASSWORD: ${{ secrets.PASSWORD }}
         script: |
-          cd sbh-fe-ts
+          cd /var/www/schoolsolver.ru/html/sbh-fe-ts/
           npm build
