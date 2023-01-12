@@ -30,4 +30,5 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
         script: |
           cd /var/www/schoolsolver.ru/html/sbh-fe-ts/
+          npm install
           npm run build
