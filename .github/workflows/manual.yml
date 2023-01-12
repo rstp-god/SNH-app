@@ -18,7 +18,7 @@ jobs:
         PORT: ${{ secrets.PORT }}
         PASSWORD: ${{ secrets.PASSWORD }}
       with:
-        source: "."
+        source: "/sbh-fe-ts"
         target: "/var/www/schoolsolver.ru/html"
 
     - name: Executing remote command
