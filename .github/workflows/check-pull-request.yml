@@ -2,7 +2,7 @@ name: Check build
 
 on:
   pull_request:
-    branches: [ "master" ]
+    branches: [ "commitordie" ]
 
 jobs:
 
