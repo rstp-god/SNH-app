@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../sbh-fe/.idea/sbh-fe.iml" filepath="$PROJECT_DIR$/../sbh-fe/.idea/sbh-fe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sbh-fe-ts.iml" filepath="$PROJECT_DIR$/.idea/sbh-fe-ts.iml" />
+    </modules>
+  </component>
+</project>
