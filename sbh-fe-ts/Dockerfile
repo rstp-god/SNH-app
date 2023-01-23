@@ -2,7 +2,7 @@
 FROM node:16.10.0-alpine as build
 RUN apk add --no-cache python2 g++ make
 WORKDIR /sbh-fe-ts
-COPY package*.json .
+COPY package.json .
 RUN yarn install
 COPY . .
 RUN yarn run build
